@@ -60,7 +60,7 @@ ${shop(640, 590, 4.2, true)}
 <rect x="240" y="880" width="600" height="106" rx="53" fill="#25D366"/>
 ${whatsapp(286, 906, 2.2)}
 <text x="590" y="947" font-family="Liberation Sans" font-size="37" font-weight="bold" fill="white" text-anchor="middle">Hazte visible: GRATIS</text>
-<text x="540" y="1036" font-family="Liberation Sans" font-size="26" fill="#a5b4fc" text-anchor="middle">Google · Móvil · IAs · WhatsApp 649 53 00 22</text>
+<text x="540" y="1036" font-family="Liberation Sans" font-size="26" fill="#a5b4fc" text-anchor="middle">Google · Móvil · IAs · WhatsApp 624 57 27 07</text>
 </svg>`;
 
 // ═══ REEL ═══
@@ -82,7 +82,7 @@ ${shop(790, 1040, 4.6, true)}
 <rect x="220" y="1555" width="640" height="130" rx="65" fill="#25D366"/>
 ${whatsapp(268, 1590, 2.6)}
 <text x="600" y="1635" font-family="Liberation Sans" font-size="40" font-weight="bold" fill="white" text-anchor="middle">Hazte visible: GRATIS</text>
-<text x="540" y="1755" font-family="Liberation Sans" font-size="30" fill="#a5b4fc" text-anchor="middle">Sin compromiso · WhatsApp 649 53 00 22</text>
+<text x="540" y="1755" font-family="Liberation Sans" font-size="30" fill="#a5b4fc" text-anchor="middle">Sin compromiso · WhatsApp 624 57 27 07</text>
 </svg>`;
 
 await sharp(Buffer.from(sq)).png().toFile("/tmp/ads/out/anuncio-8-visibilidad.png");

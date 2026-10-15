@@ -60,7 +60,7 @@ async function makeAd({ img, name, tag, headline, sub }) {
     <rect x="60" y="962" width="430" height="86" rx="43" fill="#25D366"/>
     ${whatsapp(104, 984, 1.85)}
     <text x="312" y="1014" font-family="Liberation Sans" font-size="29" font-weight="bold" fill="white" text-anchor="middle">Auditoría GRATIS · 24h</text>
-    <text x="522" y="1014" font-family="Liberation Sans" font-size="25" fill="#d8cff0">649 53 00 22</text>
+    <text x="522" y="1014" font-family="Liberation Sans" font-size="25" fill="#d8cff0">624 57 27 07</text>
   </svg>`;
 
   await sharp(photo).composite([{ input: Buffer.from(overlay), top: 0, left: 0 }]).png().toFile(`${OUT}/${name}.png`);

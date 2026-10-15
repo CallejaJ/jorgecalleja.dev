@@ -1,7 +1,7 @@
 # Pies de foto — posts cuadrados (feed)
 
 Uno por post. Tono tú a tú, sin emojis. Copia el texto, pégalo como pie de foto y publica.
-CTA siempre al WhatsApp: **649 53 00 22** · Auditoría gratis en 24h.
+CTA siempre al WhatsApp: **624 57 27 07** · Auditoría gratis en 24h.
 
 Consejo: termina siempre leyendo la pregunta final en voz alta. Es la que dispara comentarios, y los comentarios son los que te dan alcance. Responde a todos en la primera hora.
 
@@ -16,7 +16,7 @@ Te vendieron el Kit Digital como el gran salto digital de tu negocio. Te entrega
 
 No es culpa tuya. Te dieron una plantilla sin estructura, sin pensar en cómo te busca tu cliente. Una web que está, pero no trabaja.
 
-La buena noticia: casi todo tiene arreglo. Te digo gratis qué le pasa a la tuya en 24h. Escríbeme al WhatsApp 649 53 00 22.
+La buena noticia: casi todo tiene arreglo. Te digo gratis qué le pasa a la tuya en 24h. Escríbeme al WhatsApp 624 57 27 07.
 
 ¿Cuántos clientes reales te ha traído tu web del Kit Digital? Sé sincero.
 
@@ -29,7 +29,7 @@ Alguien busca ahora mismo en Google lo que tú vendes. Y encuentra a tu competen
 
 Si tu web no está bien estructurada, para Google es como si no existieras. Da igual lo bueno que seas: si no te ven, no te llaman.
 
-Te reviso gratis por qué no apareces y qué se puede hacer. Auditoría en 24h por WhatsApp: 649 53 00 22.
+Te reviso gratis por qué no apareces y qué se puede hacer. Auditoría en 24h por WhatsApp: 624 57 27 07.
 
 ¿Te has buscado alguna vez en Google, en ventana de incógnito, para ver si sales?
 
@@ -42,7 +42,7 @@ Te reviso gratis por qué no apareces y qué se puede hacer. Auditoría en 24h p
 
 Muchas webs del Kit Digital se diseñaron mirando el ordenador y se publicaron sin probarlas en el teléfono. Y ahí está la mayoría de tu gente.
 
-Abre tu web en el móvil ahora. ¿Funciona todo a la primera? Si no, escríbeme: 649 53 00 22, te lo miro gratis.
+Abre tu web en el móvil ahora. ¿Funciona todo a la primera? Si no, escríbeme: 624 57 27 07, te lo miro gratis.
 
 ¿Qué es lo primero que falla cuando abres tu web en el móvil?
 
@@ -55,7 +55,7 @@ Más de 3 segundos en cargar y pierdes la mitad de tus visitas antes de que vean
 
 Una web lenta no es un problema técnico menor: es dinero que se va cada día sin que te enteres.
 
-¿Sabes cuánto tarda la tuya? Dime tu web por WhatsApp (649 53 00 22) y te lo mido gratis en 24h.
+¿Sabes cuánto tarda la tuya? Dime tu web por WhatsApp (624 57 27 07) y te lo mido gratis en 24h.
 
 ¿Alguna vez has cerrado tú una web por lenta? Seguro que sí. A tus clientes les pasa igual.
 
@@ -70,7 +70,7 @@ Una web no debería ser un folleto olvidado. Debería ser tu mejor comercial: tr
 
 Eso es lo que hago: te reconstruyo la web para que de verdad traiga clientes, no para que quede bonita y ya.
 
-¿La quieres así? Escríbeme al 649 53 00 22 y te hago una auditoría gratis en 24h.
+¿La quieres así? Escríbeme al 624 57 27 07 y te hago una auditoría gratis en 24h.
 
 ¿Qué es lo que más te gustaría que hiciera tu web y hoy no hace?
 
@@ -83,7 +83,7 @@ Imagina abrir el móvil por la mañana y tener mensajes de clientes que te encon
 
 No es magia: es estructura, velocidad y estar donde tu cliente te busca.
 
-Te enseño cómo dejar la tuya así. Auditoría gratis por WhatsApp: 649 53 00 22.
+Te enseño cómo dejar la tuya así. Auditoría gratis por WhatsApp: 624 57 27 07.
 
 ¿Cuántos clientes te llegan hoy por tu web, y cuántos por el boca a boca?
 
@@ -96,7 +96,7 @@ Cuando alguien busca tu servicio en Málaga, el primero que aparece se lleva la 
 
 Ese puesto se trabaja: una página por servicio, textos que respondan a lo que la gente escribe, y una ficha de Google al día.
 
-¿Quieres salir arriba? Te digo gratis qué te falta. WhatsApp: 649 53 00 22.
+¿Quieres salir arriba? Te digo gratis qué te falta. WhatsApp: 624 57 27 07.
 
 ¿En qué puesto sales hoy cuando buscas tu propio servicio en Google?
 
@@ -109,7 +109,7 @@ El objetivo no es tener web. Es tener más clientes y perseguir menos. Una buena
 
 Menos tiempo persiguiendo, más tiempo atendiendo. Eso es una web que trabaja.
 
-Hablamos sin compromiso. Escríbeme al 649 53 00 22 y te oriento gratis.
+Hablamos sin compromiso. Escríbeme al 624 57 27 07 y te oriento gratis.
 
 ¿Qué harías con las horas que hoy pierdes buscando clientes?
 
@@ -124,7 +124,7 @@ Una web mala no es que "no ayude": es que te cuesta dinero cada mes. Visitas que
 
 Sumado, es una factura silenciosa que pagas sin verla.
 
-Te calculo gratis qué estás perdiendo y cómo pararlo. WhatsApp: 649 53 00 22, respuesta en 24h.
+Te calculo gratis qué estás perdiendo y cómo pararlo. WhatsApp: 624 57 27 07, respuesta en 24h.
 
 ¿Cuánto crees que te está costando tu web actual sin que lo notes?
 
@@ -137,7 +137,7 @@ Tu web hoy: tarda 8 segundos, aparece en la página 7 de Google, botones rotos e
 
 En dos semanas: carga en menos de 1 segundo, primera página de Google, todo funcionando en el móvil, y una nota de velocidad de 99/100.
 
-Esa es la diferencia entre tener web y tener una web que vende. Te la enseño con la tuya, gratis: 649 53 00 22.
+Esa es la diferencia entre tener web y tener una web que vende. Te la enseño con la tuya, gratis: 624 57 27 07.
 
 ¿En cuál de las dos columnas está tu web ahora mismo?
 
@@ -150,7 +150,7 @@ Google mide la velocidad de tu web de 0 a 100. Se llama Lighthouse y es una nota
 
 Una web a medida llega a 99-100. Y esa diferencia la nota tu cliente y la nota Google.
 
-Te mido la tuya gratis y te digo qué nota saca. Escríbeme al 649 53 00 22.
+Te mido la tuya gratis y te digo qué nota saca. Escríbeme al 624 57 27 07.
 
 ¿Sabes qué puntuación saca tu web hoy? Dime tu dirección y te la mido.
 
@@ -163,7 +163,7 @@ Puedes ser el mejor en lo tuyo, pero si el cliente no te encuentra, para él no 
 
 Google, móvil y ahora también las IA. Estar visible en los tres es lo que separa a quien recibe llamadas de quien espera.
 
-Te ayudo a que te vean. Auditoría gratis en 24h por WhatsApp: 649 53 00 22.
+Te ayudo a que te vean. Auditoría gratis en 24h por WhatsApp: 624 57 27 07.
 
 ¿Por dónde te llegan hoy la mayoría de tus clientes?
 
@@ -177,7 +177,7 @@ Te vendieron el Kit Digital como "digitalización gratis" y acabaste con una web
 
 Desliza para ver por qué esa web no vende, y qué se puede hacer para que sí lo haga.
 
-No hace falta tirarla y empezar de cero: casi siempre se rescata. Te digo gratis qué le pasa a la tuya en 24h. Escríbeme al WhatsApp 649 53 00 22.
+No hace falta tirarla y empezar de cero: casi siempre se rescata. Te digo gratis qué le pasa a la tuya en 24h. Escríbeme al WhatsApp 624 57 27 07.
 
 ¿Qué es lo que más rabia te da de tu experiencia con el Kit Digital? Cuéntamelo aquí abajo.
 

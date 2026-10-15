@@ -24,7 +24,7 @@ const businessJsonLd = {
     "Desarrollo web para pymes y autónomos: rescate de webs del Kit Digital, webs nuevas pensadas para vender, SEO técnico, velocidad 99/100 y optimización para buscadores con IA (GEO). Auditoría gratuita en 24h.",
   url: SITE_URL,
   email: CONTACT_EMAIL,
-  telephone: "+34649530022",
+  telephone: "+34624572707",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Málaga",

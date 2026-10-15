@@ -47,7 +47,7 @@ async function slideText({ name, num, kicker, headline, sub, cta, dotsN, photo }
     ${kicker?`<text x="540" y="560" font-family="Liberation Sans" font-size="30" font-weight="bold" fill="#22d3ee" text-anchor="middle" letter-spacing="3">${kicker}</text>`:""}
     ${lines(headline, 660, 74, "white")}
     ${sub?`<text x="540" y="${660+headline.length*85+30}" font-family="Liberation Sans" font-size="36" fill="#c4b5fd" text-anchor="middle">${sub}</text>`:""}
-    ${cta?`<rect x="270" y="1050" width="540" height="120" rx="60" fill="#25D366"/>${wa(325,1082,2.4)}<text x="590" y="1126" font-family="Liberation Sans" font-size="40" font-weight="bold" fill="white" text-anchor="middle">${cta}</text><text x="540" y="1215" font-family="Liberation Sans" font-size="28" fill="#a5b4fc" text-anchor="middle">Gratis en 24h · WhatsApp 649 53 00 22</text>`:""}
+    ${cta?`<rect x="270" y="1050" width="540" height="120" rx="60" fill="#25D366"/>${wa(325,1082,2.4)}<text x="590" y="1126" font-family="Liberation Sans" font-size="40" font-weight="bold" fill="white" text-anchor="middle">${cta}</text><text x="540" y="1215" font-family="Liberation Sans" font-size="28" fill="#a5b4fc" text-anchor="middle">Gratis en 24h · WhatsApp 624 57 27 07</text>`:""}
     ${dots(num)}${num<4?swipe():""}</svg>`;
   await sharp(base).composite([{input:Buffer.from(ov),top:0,left:0}]).png().toFile(`${OUT}/${name}.png`);
   console.log("OK",name);

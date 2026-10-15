@@ -29,6 +29,6 @@ export const LLMS_CONTENT = `# Jorge Calleja — Desarrollo Web
 ## Contacto
 
 - Email: hola@jorgecalleja.dev
-- WhatsApp: +34 649 53 00 22
+- WhatsApp: +34 624 57 27 07
 - Ubicación: Málaga, España (trabajo en remoto para toda España)
 `;
