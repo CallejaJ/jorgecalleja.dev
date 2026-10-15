@@ -62,7 +62,7 @@ ${visual}
 <rect x="220" y="1555" width="640" height="130" rx="65" fill="#25D366"/>
 ${whatsapp(268, 1590, 2.6)}
 <text x="600" y="1635" font-family="Liberation Sans" font-size="40" font-weight="bold" fill="white" text-anchor="middle">${ctaText}</text>
-<text x="540" y="1755" font-family="Liberation Sans" font-size="30" fill="#a5b4fc" text-anchor="middle">Sin compromiso · WhatsApp 624 57 27 07</text>
+<text x="540" y="1755" font-family="Liberation Sans" font-size="30" fill="#a5b4fc" text-anchor="middle">Sin compromiso · Escríbeme por WhatsApp</text>
 </svg>`;
 
 const hl = (lines, y0, size = 82, lh = 1.24) =>

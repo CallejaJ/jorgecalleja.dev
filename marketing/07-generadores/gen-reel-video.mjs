@@ -45,7 +45,7 @@ async function textScene({ name, headline, sub, cta, bg="#150d26" }) {
     ${faro(429.6, 170, 4.6, 0.55)}
     ${textLines(headline, 820, 86, "white")}
     ${sub?`<text x="540" y="${820+headline.length*100+40}" font-family="Liberation Sans" font-size="38" fill="#c4b5fd" text-anchor="middle">${sub}</text>`:""}
-    ${cta?`<rect x="240" y="1560" width="600" height="130" rx="65" fill="#25D366"/>${wa(300,1595,2.6)}<text x="590" y="1642" font-family="Liberation Sans" font-size="44" font-weight="bold" fill="white" text-anchor="middle">${cta}</text><text x="540" y="1760" font-family="Liberation Sans" font-size="32" fill="#a5b4fc" text-anchor="middle">Gratis en 24h · WhatsApp 624 57 27 07</text>`:""}
+    ${cta?`<rect x="240" y="1560" width="600" height="130" rx="65" fill="#25D366"/>${wa(300,1595,2.6)}<text x="590" y="1642" font-family="Liberation Sans" font-size="44" font-weight="bold" fill="white" text-anchor="middle">${cta}</text><text x="540" y="1760" font-family="Liberation Sans" font-size="32" fill="#a5b4fc" text-anchor="middle">Gratis en 24h · Escríbeme por WhatsApp</text>`:""}
   </svg>`;
   await sharp(Buffer.from(svg)).png().toFile(`${OUT}/${name}.png`);
   console.log("OK", name);
