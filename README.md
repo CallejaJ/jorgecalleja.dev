@@ -1,6 +1,6 @@
 # jorgecalleja.dev
 
-<div align="center">
+<div align="left">
     <img src="https://img.shields.io/badge/Next.js-15-000000?style=for-the-badge&logo=nextdotjs" alt="Next.js" />
     <img src="https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React" />
     <img src="https://img.shields.io/badge/TypeScript-5-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
@@ -12,7 +12,7 @@
     <img src="https://img.shields.io/badge/Vercel-Deploy-000000?style=for-the-badge&logo=vercel" alt="Vercel" />
 </div>
 
-<p align="center">
+<p align="left">
     <i>Lead-generation site for Jorge Calleja, a web developer in Málaga who rescues underperforming Kit Digital websites for small businesses, with a built-in PageSpeed analyzer and content optimized for both search engines and AI assistants.</i>
 </p>
 
