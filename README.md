@@ -1,100 +1,90 @@
-# Jorge Calleja Pérez - Web3 & Full Stack Engineer
+# jorgecalleja.dev
 
-[![Next.js](https://img.shields.io/badge/Next.js-14-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.0-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
-[![Framer Motion](https://img.shields.io/badge/Framer_Motion-11.0-FF0055?style=for-the-badge&logo=framer)](https://www.framer.com/motion/)
+[![Next.js](https://img.shields.io/badge/Next.js-15-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
+[![Vercel](https://img.shields.io/badge/Vercel-deploy-black?style=for-the-badge&logo=vercel)](https://vercel.com/)
 
-Professional portfolio showcasing expertise in Blockchain development, Full Stack Engineering, and Prompt Engineering. This application demonstrates a modern, performance-oriented architecture using Next.js 14 and TypeScript.
+Código de **[jorgecalleja.dev](https://jorgecalleja.dev)**, la web de Jorge Calleja Pérez, desarrollador web en Málaga.
 
-## System Architecture & Features
+Es una landing de captación para pymes y autónomos: rescate de webs del Kit Digital, webs nuevas pensadas para vender, SEO técnico, velocidad 99/100 y optimización para buscadores con IA (GEO), con auditoría gratuita en 24h.
 
-- **Framework**: Next.js 14 with App Router for server-side rendering and streamlined routing.
-- **Language**: TypeScript throughout for strict type safety and maintainable codebases.
-- **Styling System**: Tailwind CSS for utility-first styling, complemented by shadcn/ui for accessible, composable component primitives.
-- **State Management**: React Hooks and Context API (or Zustand/Redux where applicable) for efficient state handling.
-- **Animation**: Framer Motion for hardware-accelerated, declarative animations.
-- **Web3 Integration**: Architected to support dApp features including wallet connection (RainbowKit, Wagmi) and smart contract interaction (Ethers.js, Viem).
+## Qué incluye
 
-## Technology Stack
+- **Home** (`/`): problemas típicos, antes/después, servicios, proceso, casos, testimonios, FAQ y llamada a la acción por WhatsApp.
+- **Analizador de webs** (`/analiza`): mide cualquier URL con Google PageSpeed Insights (Lighthouse) a través de `/api/analizar`.
+- **Auditoría por email** (`/api/audit`): formulario que envía la solicitud con Resend.
+- **Landing para músicos** (`/musicos`).
+- **Páginas legales**: `/privacidad` y `/cookies`, con banner de consentimiento (el Meta Pixel solo se carga tras aceptar).
+- **SEO y GEO**: metadata por página, JSON-LD (`ProfessionalService` + `FAQPage`), `sitemap.xml`, `robots.txt` con bots de IA permitidos y `llms.txt`.
+- **Markdown para agentes**: si un cliente pide `/` con `Accept: text/markdown`, el middleware sirve la versión en markdown (`/md`).
+- Tema claro/oscuro y Vercel Analytics.
 
-### Frontend Engineering
-- **Core**: Next.js 14, React 18, TypeScript
-- **Styling**: Tailwind CSS, PostCSS, Framer Motion
-- **UI Library**: shadcn/ui (Radix UI primitives), Lucide React
-- **Validation**: Zod
+## Stack
 
-### Web3 & Blockchain
-- **Smart Contracts**: Solidity (v0.8.20+), Hardhat
-- **Interaction**: Ethers.js, Viem, Wagmi
-- **Wallet Support**: RainbowKit, Account Abstraction
-- **Security**: OpenZeppelin standard implementations
+- **Framework**: Next.js 15 (App Router), React 19, TypeScript
+- **Estilos**: Tailwind CSS, shadcn/ui (Radix UI), Framer Motion, Lucide
+- **Formularios y validación**: React Hook Form, Zod
+- **Servicios externos**: Google PageSpeed Insights API, Resend
+- **Despliegue**: Vercel
 
-### Development Tools
-- **Linting & Formatting**: ESLint, Prettier
-- **Package Management**: npm/yarn/pnpm
-- **Version Control**: Git
-
-## Project Structure
+## Estructura
 
 ```
-portfolio/
-├── app/                  # Next.js App Router directory
-│   ├── globals.css       # Global styles and Tailwind directives
-│   ├── layout.tsx        # Root layout definition
-│   └── page.tsx          # Main entry point
-├── components/           # Reusable React components
-│   └── ui/               # Design system primitives (shadcn)
-├── lib/                  # Utilities, data mapping, and helper functions
-├── public/               # Static assets
-└── types/                # TypeScript type definitions
+jorgecalleja.dev/
+├── app/                 # Rutas (App Router): home, analiza, musicos, legales, api, llms.txt, md, sitemap
+├── components/          # Secciones de la landing y componentes ui/ (shadcn)
+├── hooks/               # Hooks de React
+├── lib/                 # Configuración del sitio, textos, datos y utilidades
+├── public/              # Imágenes, iconos, descargas, robots.txt y manifest
+├── marketing/           # Material de redes sociales y sus generadores
+├── scripts/             # Scripts de apoyo
+└── middleware.ts        # Negociación de contenido markdown para agentes
 ```
 
-## Getting Started
+Los datos de contacto, el número de WhatsApp, la URL pública y la valoración de Google se cambian en `lib/site-config.ts`.
 
-### Prerequisites
-- Node.js (v18 or higher recommended)
-- Package manager (npm, yarn, pnpm, or bun)
+## Desarrollo local
 
-### Installation
+Requisitos: Node.js 18 o superior.
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/CallejaJ/portfolio.git
-   cd portfolio
-   ```
-
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-
-3. Start the development server:
-   ```bash
-   npm run dev
-   ```
-
-4. Access the application at `http://localhost:3000`
-
-## Deployment
-
-### Vercel
-This project is optimized for deployment on Vercel. Connect the GitHub repository to a Vercel project for automatic CI/CD pipelines.
-
-### Docker
-A Dockerfile can be included for containerized deployment.
 ```bash
-docker build -t portfolio .
-docker run -p 3000:3000 portfolio
+git clone https://github.com/CallejaJ/jorgecalleja.dev.git
+cd jorgecalleja.dev
+npm install
+npm run dev
 ```
 
-## Contact Information
+La web queda en `http://localhost:3000`.
 
-**Jorge Calleja Pérez**
-- Email: callejaj@proton.me
-- LinkedIn: https://www.linkedin.com/in/callejaj
-- GitHub: https://github.com/CallejaJ
-- Location: Málaga, Spain
+### Variables de entorno
 
----
-*Developed with a focus on performance, accessibility, and modern software engineering practices.*
+Crea un `.env.local` con:
+
+| Variable | Para qué sirve |
+| --- | --- |
+| `PAGESPEED_API_KEY` | Analizador de webs. Funciona sin ella, pero con límites más bajos. |
+| `RESEND_API_KEY` | Envío de las solicitudes de auditoría por email. |
+| `AUDIT_TO_EMAIL` | Dirección que recibe las solicitudes (por defecto `hola@jorgecalleja.dev`). |
+
+### Scripts
+
+| Comando | Qué hace |
+| --- | --- |
+| `npm run dev` | Servidor de desarrollo |
+| `npm run build` | Build de producción |
+| `npm run start` | Sirve el build |
+
+## Despliegue
+
+Se despliega en Vercel desde este repositorio: cada push a `main` publica en producción y cada PR genera una preview. Las variables de entorno de arriba se configuran en el proyecto de Vercel.
+
+## Contacto
+
+**Jorge Calleja Pérez** · Málaga, España
+
+- Web: [jorgecalleja.dev](https://jorgecalleja.dev)
+- Email: [hola@jorgecalleja.dev](mailto:hola@jorgecalleja.dev)
+- LinkedIn: [linkedin.com/in/callejaj](https://www.linkedin.com/in/callejaj)
+- GitHub: [github.com/CallejaJ](https://github.com/CallejaJ)
