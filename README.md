@@ -1,90 +1,140 @@
 # jorgecalleja.dev
 
-[![Next.js](https://img.shields.io/badge/Next.js-15-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
-[![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react)](https://react.dev/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
-[![Vercel](https://img.shields.io/badge/Vercel-deploy-black?style=for-the-badge&logo=vercel)](https://vercel.com/)
+<div align="center">
+    <img src="https://img.shields.io/badge/Next.js-15-000000?style=for-the-badge&logo=nextdotjs" alt="Next.js" />
+    <img src="https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React" />
+    <img src="https://img.shields.io/badge/TypeScript-5-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
+    <img src="https://img.shields.io/badge/Tailwind_CSS-3-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind CSS" />
+    <img src="https://img.shields.io/badge/shadcn/ui-Radix-000000?style=for-the-badge&logo=shadcnui" alt="shadcn/ui" />
+    <img src="https://img.shields.io/badge/Framer_Motion-latest-0055FF?style=for-the-badge&logo=framer&logoColor=white" alt="Framer Motion" />
+    <img src="https://img.shields.io/badge/PageSpeed_Insights-API-4285F4?style=for-the-badge&logo=google&logoColor=white" alt="PageSpeed Insights" />
+    <img src="https://img.shields.io/badge/Resend-Email-000000?style=for-the-badge&logo=resend" alt="Resend" />
+    <img src="https://img.shields.io/badge/Vercel-Deploy-000000?style=for-the-badge&logo=vercel" alt="Vercel" />
+</div>
 
-Código de **[jorgecalleja.dev](https://jorgecalleja.dev)**, la web de Jorge Calleja Pérez, desarrollador web en Málaga.
+<p align="center">
+    <i>Lead-generation site for Jorge Calleja, a web developer in Málaga who rescues underperforming Kit Digital websites for small businesses, with a built-in PageSpeed analyzer and content optimized for both search engines and AI assistants.</i>
+</p>
 
-Es una landing de captación para pymes y autónomos: rescate de webs del Kit Digital, webs nuevas pensadas para vender, SEO técnico, velocidad 99/100 y optimización para buscadores con IA (GEO), con auditoría gratuita en 24h.
+## Service Offering
 
-## Qué incluye
+The site sells four services to small businesses and freelancers in Spain, most of whom received a website through the government **Kit Digital** programme that brings them no clients. Every engagement starts with a free audit delivered within 24 hours.
 
-- **Home** (`/`): problemas típicos, antes/después, servicios, proceso, casos, testimonios, FAQ y llamada a la acción por WhatsApp.
-- **Analizador de webs** (`/analiza`): mide cualquier URL con Google PageSpeed Insights (Lighthouse) a través de `/api/analizar`.
-- **Auditoría por email** (`/api/audit`): formulario que envía la solicitud con Resend.
-- **Landing para músicos** (`/musicos`).
-- **Páginas legales**: `/privacidad` y `/cookies`, con banner de consentimiento (el Meta Pixel solo se carga tras aceptar).
-- **SEO y GEO**: metadata por página, JSON-LD (`ProfessionalService` + `FAQPage`), `sitemap.xml`, `robots.txt` con bots de IA permitidos y `llms.txt`.
-- **Markdown para agentes**: si un cliente pide `/` con `Accept: text/markdown`, el middleware sirve la versión en markdown (`/md`).
-- Tema claro/oscuro y Vercel Analytics.
+| Service | Problem It Solves | Deliverable |
+|---|---|---|
+| **Kit Digital Rescue** | A delivered site that is slow, broken on mobile and invisible on Google | Audit, reuse of domain and content, rebuilt structure and speed |
+| **Sales-Focused New Website** | No site, or one that does not turn visits into contacts | New mobile-first site with a direct path to WhatsApp or a call |
+| **SEO and Speed** | Low ranking and slow load times | Technical SEO, structured content and a 99/100 speed score with a before/after report |
+| **GEO (AI Visibility)** | Customers asking ChatGPT or Perplexity instead of Google | Structured data and citable content so AI assistants recommend the business |
 
-## Stack
+## Pages and Routes
 
-- **Framework**: Next.js 15 (App Router), React 19, TypeScript
-- **Estilos**: Tailwind CSS, shadcn/ui (Radix UI), Framer Motion, Lucide
-- **Formularios y validación**: React Hook Form, Zod
-- **Servicios externos**: Google PageSpeed Insights API, Resend
-- **Despliegue**: Vercel
+The home page is a single long-form landing; the rest of the routes support conversion, compliance and machine readability.
 
-## Estructura
+| Route | Purpose |
+|---|---|
+| `/` | Landing: pain points, before/after, services, process, case study, testimonials, FAQ, free checklist and contact |
+| `/analiza` | Public website analyzer backed by Google PageSpeed Insights |
+| `/musicos` | Dedicated landing for musicians and bands |
+| `/privacidad`, `/cookies` | Privacy and cookie policies |
+| `/api/analizar` | Runs the PageSpeed analysis for a submitted URL |
+| `/api/audit` | Receives free-audit requests and forwards them by email |
+| `/llms.txt`, `/md` | Markdown representation of the site for AI agents |
+| `/sitemap.xml`, `/robots.txt` | Crawl configuration, with AI bots explicitly allowed |
 
-```
-jorgecalleja.dev/
-├── app/                 # Rutas (App Router): home, analiza, musicos, legales, api, llms.txt, md, sitemap
-├── components/          # Secciones de la landing y componentes ui/ (shadcn)
-├── hooks/               # Hooks de React
-├── lib/                 # Configuración del sitio, textos, datos y utilidades
-├── public/              # Imágenes, iconos, descargas, robots.txt y manifest
-├── marketing/           # Material de redes sociales y sus generadores
-├── scripts/             # Scripts de apoyo
-└── middleware.ts        # Negociación de contenido markdown para agentes
-```
+## Website Analyzer
 
-Los datos de contacto, el número de WhatsApp, la URL pública y la valoración de Google se cambian en `lib/site-config.ts`.
+The analyzer turns a technical Lighthouse report into a verdict a non-technical business owner can read, and acts as the main lead magnet. `app/api/analizar/route.ts` normalizes the URL, calls the **PageSpeed Insights v5** API with the `mobile` strategy and returns four category scores plus five plain-language checks.
 
-## Desarrollo local
+| Check | Source |
+|---|---|
+| **Scores** | Lighthouse performance, accessibility, best practices and SEO categories |
+| **HTTPS** | `is-on-https` audit |
+| **Mobile ready** | `viewport` audit |
+| **Google title and description** | `document-title` and `meta-description` audits |
+| **Fast load** | Largest Contentful Paint under 2.5 s |
 
-Requisitos: Node.js 18 o superior.
+## Search and AI Visibility
 
-```bash
-git clone https://github.com/CallejaJ/jorgecalleja.dev.git
-cd jorgecalleja.dev
-npm install
-npm run dev
-```
+The site is built to be understood by Google and by AI assistants as well as by people. Metadata targets commercial search intent, and the same content is exposed in machine-friendly formats.
 
-La web queda en `http://localhost:3000`.
+| Mechanism | Implementation |
+|---|---|
+| **Structured data** | `ProfessionalService` and `FAQPage` JSON-LD in `app/layout.tsx` |
+| **llms.txt** | Static route generated from `lib/llms-content.ts` |
+| **Markdown negotiation** | `middleware.ts` rewrites `/` to `/md` when a request sends `Accept: text/markdown` |
+| **Crawl rules** | `public/robots.txt` and `app/sitemap.ts` |
 
-### Variables de entorno
+## System Architecture
 
-Crea un `.env.local` con:
+| Component | Role |
+|---|---|
+| **Next.js App Router** | Renders the landing pages and serves the API and static text routes |
+| **Landing components** | Section components in `components/` composed by `app/page.tsx` |
+| **Content layer** | `lib/translations.ts`, `lib/projects-data.ts` and `lib/site-config.ts` hold copy, portfolio data and contact settings |
+| **Analyzer API** | `app/api/analizar` wraps Google PageSpeed Insights and simplifies its output |
+| **Audit API** | `app/api/audit` validates audit requests and sends them through Resend |
+| **Middleware** | Serves the markdown version of the home page to agents that ask for it |
+| **Consent manager** | `components/cookie-consent.tsx` loads the Meta Pixel only after the visitor accepts |
+| **Vercel** | Hosting, preview deployments per pull request and Web Analytics |
 
-| Variable | Para qué sirve |
-| --- | --- |
-| `PAGESPEED_API_KEY` | Analizador de webs. Funciona sin ella, pero con límites más bajos. |
-| `RESEND_API_KEY` | Envío de las solicitudes de auditoría por email. |
-| `AUDIT_TO_EMAIL` | Dirección que recibe las solicitudes (por defecto `hola@jorgecalleja.dev`). |
+## Technology Stack
 
-### Scripts
+- **Frontend**: Next.js 15.2 (App Router), React 19, TypeScript 5
+- **Styling and UI**: Tailwind CSS 3.4, shadcn/ui on Radix UI, Framer Motion, Lucide icons, Geist and Space Grotesk fonts
+- **Forms**: React Hook Form, Zod
+- **External Services**: Google PageSpeed Insights API v5, Resend, Meta Pixel (consent-gated)
+- **Analytics**: Vercel Web Analytics
+- **Deployment**: Vercel
 
-| Comando | Qué hace |
-| --- | --- |
-| `npm run dev` | Servidor de desarrollo |
-| `npm run build` | Build de producción |
-| `npm run start` | Sirve el build |
+## Key Features
 
-## Despliegue
+1. **Instant website analyzer** — any visitor can score their own site and get a plain-language verdict before talking to anyone.
+2. **AI-assistant visibility** — `llms.txt`, markdown content negotiation and JSON-LD make the business citable by ChatGPT, Perplexity and similar tools.
+3. **WhatsApp-first conversion** — floating button, mobile CTA bar and tracked links route every call to action to a single chat.
+4. **Email audit fallback** — visitors without WhatsApp can request the free audit through a validated form.
+5. **Niche landing for musicians** — a separate page with its own metadata and Open Graph image for a second audience.
+6. **Consent-gated tracking** — the Meta Pixel loads only after explicit cookie consent, in line with GDPR.
+7. **Free downloadable checklist** — a Kit Digital website checklist PDF captures visitors who are not ready to buy.
+8. **Light and dark themes** — theme toggle backed by `next-themes`.
 
-Se despliega en Vercel desde este repositorio: cada push a `main` publica en producción y cada PR genera una preview. Las variables de entorno de arriba se configuran en el proyecto de Vercel.
+## Testing Strategy
 
-## Contacto
+There is no automated test suite. Every pull request gets a **Vercel preview deployment**, which is the place to check changes manually before merging. Performance, accessibility and SEO are measured with **Lighthouse / PageSpeed Insights**, the same engine the public analyzer uses.
 
-**Jorge Calleja Pérez** · Málaga, España
+## Localization
 
-- Web: [jorgecalleja.dev](https://jorgecalleja.dev)
-- Email: [hola@jorgecalleja.dev](mailto:hola@jorgecalleja.dev)
-- LinkedIn: [linkedin.com/in/callejaj](https://www.linkedin.com/in/callejaj)
-- GitHub: [github.com/CallejaJ](https://github.com/CallejaJ)
+The home page copy lives in `lib/translations.ts` with **Spanish** (default) and **English** dictionaries, switched from the header. The analyzer, the musicians landing and the legal pages are Spanish only, matching the target market.
+
+## Project Setup
+
+1. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+2. Create `.env.local`:
+
+   ```env
+   # Website analyzer (works without a key, with lower rate limits)
+   PAGESPEED_API_KEY=your_pagespeed_api_key
+
+   # Free audit by email
+   RESEND_API_KEY=your_resend_api_key
+   AUDIT_TO_EMAIL=hola@jorgecalleja.dev
+   ```
+
+3. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+4. Visit `http://localhost:3000`
+
+Contact details, the WhatsApp number, the public URL and the Google rating are edited in `lib/site-config.ts`.
+
+---
+
+Built for small businesses in Spain at [jorgecalleja.dev](https://jorgecalleja.dev).
