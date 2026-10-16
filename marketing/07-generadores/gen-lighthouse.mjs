@@ -85,7 +85,7 @@ ${gauge(870, 520, 100, 100, GREEN, "Web a medida", 16, true)}
 <rect x="240" y="880" width="600" height="106" rx="53" fill="#25D366"/>
 ${whatsapp(286, 906, 2.2)}
 <text x="590" y="947" font-family="Liberation Sans" font-size="38" font-weight="bold" fill="white" text-anchor="middle">Mide tu web GRATIS</text>
-<text x="540" y="1036" font-family="Liberation Sans" font-size="26" fill="#a5b4fc" text-anchor="middle">Sin compromiso · WhatsApp 649 53 00 22</text>
+<text x="540" y="1036" font-family="Liberation Sans" font-size="26" fill="#a5b4fc" text-anchor="middle">Sin compromiso · Escríbeme por WhatsApp</text>
 </svg>`;
 
 // ═══ REEL 1080×1920 ═══
@@ -110,7 +110,7 @@ ${gauge(540, 1180, 130, 100, GREEN, "Web a medida", 19, true)}
 <rect x="220" y="1555" width="640" height="130" rx="65" fill="#25D366"/>
 ${whatsapp(268, 1590, 2.6)}
 <text x="600" y="1635" font-family="Liberation Sans" font-size="42" font-weight="bold" fill="white" text-anchor="middle">Mide tu web GRATIS</text>
-<text x="540" y="1755" font-family="Liberation Sans" font-size="30" fill="#a5b4fc" text-anchor="middle">Sin compromiso · WhatsApp 649 53 00 22</text>
+<text x="540" y="1755" font-family="Liberation Sans" font-size="30" fill="#a5b4fc" text-anchor="middle">Sin compromiso · Escríbeme por WhatsApp</text>
 </svg>`;
 
 await sharp(Buffer.from(sq)).png().toFile("/tmp/ads/out/anuncio-7-lighthouse-100.png");

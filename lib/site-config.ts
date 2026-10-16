@@ -3,7 +3,7 @@
 // Cambia aquí tu número de WhatsApp si hace falta
 // ============================================
 
-export const WHATSAPP_NUMBER = "34649530022"; // prefijo país + número, sin "+" ni espacios
+export const WHATSAPP_NUMBER = "34624572707"; // prefijo país + número, sin "+" ni espacios
 
 export const CONTACT_EMAIL = "hola@jorgecalleja.dev";
 
@@ -26,7 +26,7 @@ export const LEGAL = {
   nif: "31865985Z",
   city: "Málaga, España",
   email: CONTACT_EMAIL,
-  phone: "+34 649 53 00 22",
+  phone: "+34 624 57 27 07",
 };
 
 export const getWhatsAppLink = (message: string) =>

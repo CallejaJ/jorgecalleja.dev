@@ -60,7 +60,7 @@ Es interactivo, da valor real y lleva tráfico a la web (donde está el WhatsApp
 ## 4. Textos base (rota y adapta)
 
 **Dolor — Kit Digital:**
-> ¿Te hicieron la web con el Kit Digital y no te trae ni un cliente? No es culpa tuya. Te la reviso gratis en 24h. WhatsApp 649 53 00 22.
+> ¿Te hicieron la web con el Kit Digital y no te trae ni un cliente? No es culpa tuya. Te la reviso gratis en 24h. WhatsApp 624 57 27 07.
 > #kitdigital #diseñoweb #málaga #pymesmálaga
 
 **Dolor — Google:**

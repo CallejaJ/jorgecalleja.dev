@@ -38,7 +38,7 @@ ${visual}
 <rect x="240" y="870" width="600" height="110" rx="55" fill="#25D366"/>
 ${whatsapp(288, 897, 2.3)}
 <text x="590" y="940" font-family="Liberation Sans" font-size="38" font-weight="bold" fill="white" text-anchor="middle">Auditoría GRATIS en 24h</text>
-<text x="540" y="1032" font-family="Liberation Sans" font-size="27" fill="#a5b4fc" text-anchor="middle">Sin compromiso · WhatsApp 649 53 00 22</text>
+<text x="540" y="1032" font-family="Liberation Sans" font-size="27" fill="#a5b4fc" text-anchor="middle">Sin compromiso · Escríbeme por WhatsApp</text>
 </svg>`;
 
 const hl = (lines, y0, size = 74, lh = 1.22) =>
