@@ -668,6 +668,21 @@ scenes["youtube-artistas"] = [
 ];
 pieces["yt-miniatura-artistas"] = { ...scenes["youtube-artistas"][3], scale: 1280 / 1920, out: "19-youtube/youtube-artistas-miniatura.jpg" };
 
+// Vídeo horizontal sobre las webs del Kit Digital (1920×1080)
+const ytk = (o) => yt({ tag: "Kit Digital", ...o });
+const ytkFoto = (photo, o) => ytk({ ...FOTO, photo, size: 104, mt: 10, ...o });
+scenes["youtube-kit-digital"] = [
+  ytk({ eyebrow: "Kit Digital", title: "Lo que nadie <em>te contó.</em>", sub: "¿Te hicieron la web con el Kit Digital? Mira esto.", visual: kit(), z: 1.35 }),
+  ytkFoto("pain-points/stagnant.jpg", { eyebrow: "La entrega", title: "Te dieron la web <em>y ahí se quedó.</em>", sub: "Y desde entonces, ni un cliente por ahí." }),
+  ytk({ eyebrow: "Plantillas en cadena", title: "La misma web <em>para todos.</em>", sub: "Tu logo encima de una plantilla, hecha con prisa.", visual: checks({ items: ["Plantilla genérica", "Hecha en pocos días", "Sin pensar en tu cliente", "Textos de relleno"] }), z: 1.25 }),
+  ytk({ eyebrow: "En Google", title: "Te buscan <em>y no sales.</em>", visual: searchLost("tu servicio + tu ciudad"), z: 1.35 }),
+  ytk({ eyebrow: "Velocidad · Google Lighthouse", title: "Lenta, <em>y Google lo nota.</em>", sub: "Una web lenta pierde visitas y posiciones.", visual: RINGS, z: 1.1 }),
+  ytkFoto("pain-points/deception.png", { eyebrow: "El agente digitalizador", title: "Cobró el bono <em>y se olvidó de ti.</em>", sub: "Escribes, llamas… y nadie contesta. Ni para cambiar un teléfono." }),
+  ytk({ eyebrow: "La buena noticia", title: "Casi todo <em>se rescata.</em>", sub: "Conservo tu dominio, textos y fotos. Reconstruyo lo que falla.", visual: beforeAfter(), z: 1.15 }),
+  ytk({ eyebrow: "Auditoría gratis", title: "Te la reviso <em>gratis en 24 h.</em>", sub: "Y te digo qué falla, sin tecnicismos.", visual: scene({ w: 760, h: 424 }), z: 1, cta: WA }),
+];
+pieces["yt-miniatura-kit"] = { ...scenes["youtube-kit-digital"][0], scale: 1280 / 1920, out: "19-youtube/youtube-kit-digital-miniatura.jpg" };
+
 pieces["yt-miniatura"] = { ...scenes["youtube-trailer"].at(-1), scale: 1280 / 1920, out: "19-youtube/youtube-trailer-miniatura.jpg" };
 
 // Fotogramas que también se guardan como imágenes sueltas
@@ -687,6 +702,7 @@ const videos = {
   "reel-musicos-es": { scenes: scenes["reel-musicos-es"], dur: 12 },
   "reel-musicos-en": { scenes: scenes["reel-musicos-en"], dur: 12 },
   "youtube-artistas": { scenes: scenes["youtube-artistas"], dur: 32, out: "19-youtube/youtube-artistas.mp4" },
+  "youtube-kit-digital": { scenes: scenes["youtube-kit-digital"], dur: 38, out: "19-youtube/youtube-kit-digital.mp4" },
   "youtube-trailer": { scenes: scenes["youtube-trailer"], dur: 30, out: "19-youtube/youtube-trailer.mp4" },
 };
 
