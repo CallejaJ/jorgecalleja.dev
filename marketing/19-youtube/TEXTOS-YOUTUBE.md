@@ -123,7 +123,51 @@ web para músicos, web para artistas, web para djs, página web músico, música
 
 ---
 
-## 4. Shorts (los reels de `03-reels-video`)
+## 4. Vídeo Kit Digital (`youtube-kit-digital.mp4`)
+
+Tono crítico pero con hechos que cualquiera puede comprobar en su propia web. No llamamos «estafa» al programa ni nombramos a ninguna agencia: así no te expones legalmente y el vídeo sigue siendo igual de directo.
+
+**Título:**
+```
+¿Te hicieron la web con el Kit Digital? Lo que nadie te contó
+```
+
+**Descripción:**
+```
+El Kit Digital prometía digitalizar tu negocio. Muchos recibieron una web y, desde entonces, ni un cliente.
+
+Lo que se repite una y otra vez:
+- La misma plantilla para todos, con tu logo encima y textos de relleno.
+- No sale en Google: te buscan y encuentran a la competencia.
+- Lenta: las plantillas se quedan en 60 en Google Lighthouse.
+- Y el agente digitalizador cobró el bono y se olvidó de ti: escribes, llamas, y nadie contesta. Ni para cambiar un teléfono.
+
+La buena noticia: casi todo se rescata. Conservo tu dominio, tus textos y tus fotos, y reconstruyo lo que falla.
+
+Te reviso tu web del Kit Digital gratis en 24 h y te digo qué falla, sin tecnicismos.
+
+WhatsApp: 624 57 27 07
+Web: https://jorgecalleja.dev
+Analiza tu web gratis: https://jorgecalleja.dev/analiza
+
+#KitDigital #Autónomos #DiseñoWebMálaga
+```
+
+**Miniatura:** `youtube-kit-digital-miniatura.jpg`
+
+**Etiquetas:**
+```
+kit digital, web kit digital, agente digitalizador, kit digital opiniones, kit digital web mala, rescatar web kit digital, autónomos, pymes, seo local, diseño web málaga, jorgecalleja.dev
+```
+
+**Comentario fijado:**
+```
+¿Cuántos clientes reales te ha traído tu web del Kit Digital? Y cuando escribiste al agente digitalizador, ¿te contestó? Cuéntamelo aquí.
+```
+
+---
+
+## 5. Shorts (los reels de `03-reels-video`)
 
 Súbelos tal cual desde el móvil o desde Studio (son verticales y de menos de 60 s). Título corto con #Shorts y la misma descripción base.
 
