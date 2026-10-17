@@ -40,6 +40,15 @@ const search = (query, top) => `
   <div class="res dim"><div class="rank">3</div><div><div class="ln w60"></div><div class="ln w35"></div></div></div>
 </div>`;
 
+// Búsqueda donde tu negocio no aparece (lo encuentran a otro)
+const searchLost = (query) => `
+<div class="card search">
+  <div class="bar"><span class="g">G</span><span class="q">${query}</span><span class="mag">⌕</span></div>
+  ${["La competencia", "Otra empresa", "Una cadena"].map((n, i) => `
+  <div class="res comp"><div class="rank">${i + 1}</div><div><div class="rt sm">${n}</div><div class="rs"><span class="stars">★★★★☆</span> Web · Llamar</div></div></div>`).join("")}
+  <div class="lost"><span>Tu negocio</span><em>página 3</em></div>
+</div>`;
+
 const ring = (v, label, tone) => {
   const r = 92, c = 2 * Math.PI * r, off = c * (1 - v / 100);
   return `
@@ -53,6 +62,112 @@ const ring = (v, label, tone) => {
 </div>`;
 };
 
+
+const ICON_OK = `<svg viewBox="0 0 24 24" width="22" height="22"><path d="M5 12.5l4.2 4.2L19 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+const ICON_KO = `<svg viewBox="0 0 24 24" width="22" height="22"><path d="M7 7l10 10M17 7L7 17" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>`;
+
+// Móvil: web bien hecha o rota
+const phone = (state) => `
+<div class="phone ${state}">
+  <div class="notch"></div>
+  <div class="scr">
+    <div class="p-nav"><i></i><b></b><b></b><b></b></div>
+    <div class="p-hero"><div class="ln p1"></div><div class="ln p2"></div><div class="ln p3"></div><div class="p-btn">Pedir cita</div></div>
+    <div class="p-cards"><div></div><div></div></div>
+    <div class="ln p2" style="margin-top:18px"></div><div class="ln p3"></div>
+  </div>
+  <div class="badge">${state === "good" ? ICON_OK + " Perfecta en móvil" : ICON_KO + " Hay que hacer zoom"}</div>
+</div>`;
+const phones = () => `<div class="phones">${phone("bad")}${phone("good")}</div>`;
+
+// Carga lenta
+const loader = () => `
+<div class="card loader">
+  <div class="url"><span class="dots"><i></i><i></i><i></i></span><span class="u">tunegocio.es</span></div>
+  <div class="spin"></div>
+  <div class="secs">8,4<small> s</small></div>
+  <div class="prog"><div></div></div>
+  <div class="cap">Cargando… <b>53 %</b> de las visitas se va antes de 3 s</div>
+</div>`;
+
+// Antes / después
+const beforeAfter = () => {
+  const row = (k, v, ok) => `<div class="ba-r"><span>${k}</span><b class="${ok ? "ok" : "ko"}">${ok ? ICON_OK : ICON_KO}${v}</b></div>`;
+  return `<div class="ba">
+  <div class="card ba-c"><div class="ba-h ko">Tu web hoy</div>${row("Carga", "8 s")}${row("Google", "pág. 7")}${row("Móvil", "botones rotos")}${row("Clientes", "0")}</div>
+  <div class="card ba-c good"><div class="ba-h ok">En unas semanas</div>${row("Carga", "0,9 s", 1)}${row("Google", "pág. 1", 1)}${row("Móvil", "perfecta", 1)}${row("Lighthouse", "99/100", 1)}</div>
+</div>`;
+};
+
+// Mensajes de clientes al despertar
+const notifs = () => `
+<div class="notifs">
+  <div class="n-time">07:42</div><div class="n-date">martes, buenos días</div>
+  ${[
+    ["Laura M.", "Hola, te encontré en Google. ¿Tienes hueco esta semana?", "06:58"],
+    ["Pedro · Reformas", "¿Me pasas presupuesto? Sin compromiso", "06:31"],
+    ["Carmen R.", "Me encanta vuestra web. ¿Hacéis envíos?", "02:14"],
+  ].map(([n, t, h]) => `<div class="card n"><div class="n-ic">${n[0]}</div><div class="n-b"><div class="n-n">${n}<span>${h}</span></div><div class="n-t">${t}</div></div></div>`).join("")}
+</div>`;
+
+// La factura silenciosa
+const receipt = () => `
+<div class="receipt">
+  <div class="r-h">Factura silenciosa<span>cada mes</span></div>
+  ${[["Visitas que no cargan", "−340 €"], ["Llamadas que no salen", "−280 €"], ["Formularios perdidos", "−120 €"], ["Clientes que se van a otro", "−560 €"]]
+    .map(([k, v]) => `<div class="r-r"><span>${k}</span><b>${v}</b></div>`).join("")}
+  <div class="r-t"><span>Total</span><b>−1.300 €</b></div>
+  <div class="r-f">Ejemplo orientativo · te calculo el tuyo gratis</div>
+</div>`;
+
+// Proyecto real en un navegador
+const shot = (img, url) => `
+<div class="card browser">
+  <div class="url"><span class="dots"><i></i><i></i><i></i></span><span class="u">${url}</span></div>
+  <img src="data:image/webp;base64,${readFileSync(join(root, "..", "public", "images", img)).toString("base64")}">
+</div>`;
+
+// Contactos al mes subiendo
+const chart = () => {
+  const pts = [3, 4, 4, 7, 9, 14, 18, 27];
+  const W = 460, H = 230, x = (i) => 20 + i * ((W - 40) / (pts.length - 1)), y = (v) => H - 20 - (v / 30) * (H - 40);
+  const d = pts.map((v, i) => `${i ? "L" : "M"}${x(i).toFixed(1)} ${y(v).toFixed(1)}`).join(" ");
+  return `<div class="card chart">
+  <div class="c-h"><span>Contactos desde la web</span><b>+800 %</b></div>
+  <svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">
+    <defs><linearGradient id="ar" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#22d3ee" stop-opacity=".35"/><stop offset="1" stop-color="#22d3ee" stop-opacity="0"/></linearGradient>
+    <linearGradient id="ln" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8b5cf6"/><stop offset="1" stop-color="#22d3ee"/></linearGradient></defs>
+    ${[0, 1, 2, 3].map((i) => `<line x1="0" x2="${W}" y1="${20 + i * 63}" y2="${20 + i * 63}" stroke="rgba(255,255,255,.07)"/>`).join("")}
+    <path d="${d} L${x(pts.length - 1)} ${H} L${x(0)} ${H} Z" fill="url(#ar)"/>
+    <path d="${d}" fill="none" stroke="url(#ln)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="${x(pts.length - 1)}" cy="${y(27)}" r="9" fill="#22d3ee"/><circle cx="${x(pts.length - 1)}" cy="${y(27)}" r="20" fill="#22d3ee" opacity=".2"/>
+  </svg>
+  <div class="c-x"><span>Antes</span><span>Web nueva</span><span>8 meses</span></div>
+</div>`;
+};
+
+// Checklist de la web del Kit Digital
+const kit = () => `
+<div class="card kit">
+  <div class="k-h">Tu web del Kit Digital</div>
+  ${["Estructura para Google", "Velocidad", "Funciona en el móvil", "Textos que venden"].map((t) => `<div class="k-r"><span>${t}</span><b class="ko">${ICON_KO}</b></div>`).join("")}
+  <div class="k-f">${ICON_OK} Se rescata, sin empezar de cero</div>
+</div>`;
+
+// Portada del carrusel: índice de motivos
+const motivos = () => `<div class="mot">${["No funciona en el móvil", "Tarda demasiado en cargar", "En Google no aparece"]
+  .map((t, i) => `<div class="mot-r"><b>0${i + 1}</b><span>${t}</span></div>`).join("")}</div>`;
+
+// Web abandonada: cero contactos
+const flat = () => `
+<div class="card chart">
+  <div class="c-h"><span>Contactos desde la web</span><b class="zero">0</b></div>
+  <svg width="460" height="200" viewBox="0 0 460 200">
+    ${[0, 1, 2].map((i) => `<line x1="0" x2="460" y1="${30 + i * 60}" y2="${30 + i * 60}" stroke="rgba(255,255,255,.07)"/>`).join("")}
+    <path d="M20 180 L440 180" stroke="#fb923c" stroke-width="5" stroke-linecap="round" stroke-dasharray="2 14"/>
+  </svg>
+  <div class="c-x"><span>Entregada</span><span>6 meses</span><span>14 meses</span></div>
+</div>`;
 
 // Escena de marca: el faro ilumina tu negocio (redibujo vectorial de ls-prev.jpg)
 let seed = 7;
@@ -128,7 +243,7 @@ ${[0,1,2,3,4,5].map(i=>`<path d="M${1002+i*14} 448 L${1009+i*14} 448 L${1008+i*1
 
 // ───────── plantilla ─────────
 
-const page = ({ w, h, eyebrow, title, visual, cta, layout, size = 96, mt = 70, note = "Escríbeme por WhatsApp" }) => `<!doctype html><html><head><meta charset="utf-8"><style>
+const page = ({ w, h, eyebrow, title, visual, cta, layout, size = 96, mt = 70, note = "Escríbeme por WhatsApp", z }) => `<!doctype html><html><head><meta charset="utf-8"><style>
 ${fontCss}
 *{box-sizing:border-box;margin:0;padding:0}
 :root{--ink:#0a0714;--fg:#f4f1fb;--mut:#a59fbd;--vio:#8b5cf6;--cy:#22d3ee;--line:rgba(255,255,255,.09)}
@@ -161,7 +276,7 @@ h1 em{font-family:"IS";font-style:italic;font-weight:400;letter-spacing:-.01em;
 /* search */
 .card{background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.03));border:1px solid rgba(255,255,255,.12);
   border-radius:26px;backdrop-filter:blur(10px);box-shadow:0 30px 80px -30px rgba(0,0,0,.8)}
-.search{padding:26px;width:100%}
+.search{padding:26px;width:520px}
 .bar{display:flex;align-items:center;gap:16px;background:rgba(255,255,255,.95);color:#1f1b2e;border-radius:999px;padding:14px 22px;font-size:22px}
 .bar .g{font-weight:700;color:#4f46e5}.bar .q{flex:1}.bar .mag{font-size:26px;color:#6b6780}
 .res{display:flex;gap:18px;align-items:center;padding:20px 14px;border-radius:18px;margin-top:14px}
@@ -175,7 +290,6 @@ h1 em{font-family:"IS";font-style:italic;font-weight:400;letter-spacing:-.01em;
 .w70{width:340px}.w45{width:220px}.w60{width:290px}.w35{width:170px}
 /* rings */
 .rings{display:flex;gap:40px;justify-content:center;align-items:flex-end}
-.rings{transform:scale(1.25)}
 .ring{position:relative;width:230px;text-align:center}
 .ring .track{fill:none;stroke:rgba(255,255,255,.08);stroke-width:16}
 .ring .val{fill:none;stroke-width:16;stroke-linecap:round}
@@ -185,52 +299,136 @@ h1 em{font-family:"IS";font-style:italic;font-weight:400;letter-spacing:-.01em;
 .ring .lbl{margin-top:16px;font-size:20px;color:var(--mut);letter-spacing:.06em;text-transform:uppercase}
 .ring.good{transform:scale(1.12);transform-origin:bottom center}
 .vs{font-family:"IS";font-style:italic;font-size:40px;color:var(--mut);padding-bottom:120px}
+
+.rt.sm{font-size:22px}
+.comp{border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03)}
+.lost{margin-top:18px;display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-radius:16px;border:1px dashed rgba(251,146,60,.6);color:#fdba74;font-size:21px}
+.lost em{font-style:normal;font-size:16px;letter-spacing:.12em;text-transform:uppercase;background:rgba(251,146,60,.15);padding:6px 12px;border-radius:999px}
+/* phone */
+.phones{display:flex;gap:34px;align-items:flex-end}
+.phone{position:relative;width:250px;height:500px;border-radius:44px;padding:14px;background:#14102a;border:2px solid rgba(255,255,255,.14);box-shadow:0 40px 90px -30px rgba(0,0,0,.9),inset 0 0 0 6px #0b0818}
+.notch{position:absolute;top:22px;left:50%;transform:translateX(-50%);width:80px;height:20px;border-radius:12px;background:#000;z-index:2}
+.scr{height:100%;border-radius:32px;background:linear-gradient(180deg,#f5f3ff,#e9e5fb);padding:52px 18px 18px;overflow:hidden}
+.p-nav{display:flex;gap:8px;align-items:center}.p-nav i{width:26px;height:26px;border-radius:8px;background:#8b5cf6}.p-nav b{height:8px;flex:1;border-radius:4px;background:#cfc8ea}
+.p-hero{margin-top:22px;padding:18px;border-radius:18px;background:linear-gradient(135deg,#7c3aed,#4f46e5)}
+.scr .ln{background:rgba(255,255,255,.75);height:11px}.p1{width:85%}.p2{width:65%}.p3{width:45%}
+.scr>.ln{background:#cfc8ea}
+.p-btn{margin-top:14px;display:inline-block;background:#22d3ee;color:#06121a;font-size:14px;font-weight:600;padding:9px 16px;border-radius:999px}
+.p-cards{display:flex;gap:10px;margin-top:16px}.p-cards div{flex:1;height:80px;border-radius:14px;background:#fff;box-shadow:0 6px 16px -8px rgba(60,40,120,.3)}
+.badge{position:absolute;left:50%;bottom:-22px;transform:translateX(-50%);white-space:nowrap;display:flex;gap:8px;align-items:center;padding:10px 16px;border-radius:999px;font-size:17px;font-weight:600}
+.phone.good .badge{background:#34d399;color:#04201a}.phone.bad .badge{background:#fb923c;color:#2a1104}
+.phone.bad{transform:rotate(-4deg);opacity:.92}
+.phone.bad .p-hero{transform:translateX(46px) rotate(3deg);width:290px}
+.phone.bad .p-btn{transform:translate(120px,8px)}
+.phone.bad .p-cards div:first-child{transform:translate(-30px,20px) rotate(-6deg)}
+.phone.bad .p-nav{transform:translateX(30px)}
+.phone.good{box-shadow:0 0 0 1px rgba(52,211,153,.4),0 40px 100px -30px rgba(52,211,153,.45)}
+/* loader */
+.loader{width:520px;padding:26px 30px 30px;text-align:center}
+.url{display:flex;align-items:center;gap:16px;background:rgba(255,255,255,.06);border-radius:12px;padding:10px 14px;font-size:17px;color:var(--mut)}
+.dots{display:flex;gap:7px}.dots i{width:11px;height:11px;border-radius:50%;background:rgba(255,255,255,.25)}
+.url .u{flex:1;text-align:left}
+.spin{width:66px;height:66px;margin:34px auto 6px;border-radius:50%;border:6px solid rgba(255,255,255,.1);border-top-color:#fb923c}
+.secs{font-size:120px;font-weight:600;letter-spacing:-.05em;color:#fdba74;line-height:1}.secs small{font-size:46px;color:var(--mut)}
+.prog{height:12px;border-radius:6px;background:rgba(255,255,255,.08);margin:24px 0 16px;overflow:hidden}.prog div{width:28%;height:100%;background:linear-gradient(90deg,#fb923c,#fbbf24)}
+.cap{font-size:19px;color:var(--mut)}.cap b{color:#fff}
+/* before/after */
+.ba{display:flex;gap:18px}.ba-c{width:255px;padding:24px}
+.ba-c.good{border-color:rgba(52,211,153,.45);box-shadow:0 30px 80px -30px rgba(52,211,153,.45)}
+.ba-h{font-size:15px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;margin-bottom:12px}
+.ok{color:#6ee7b7}.ko{color:#fdba74}
+.ba-r{padding:13px 0;border-top:1px solid rgba(255,255,255,.08)}
+.ba-r span{display:block;font-size:15px;color:var(--mut)}
+.ba-r b{display:flex;align-items:center;gap:6px;font-size:23px;font-weight:600;margin-top:2px}
+/* notifs */
+.notifs{width:520px;text-align:center}
+.n-time{font-size:110px;font-weight:300;letter-spacing:-.05em;line-height:1}.n-date{font-size:20px;color:var(--mut);margin:6px 0 26px}
+.n{display:flex;gap:16px;text-align:left;padding:18px 20px;margin-top:12px;border-radius:22px}
+.n-ic{width:48px;height:48px;border-radius:14px;flex:none;display:grid;place-items:center;font-weight:600;font-size:20px;background:#25D366;color:#04210f}
+.n-n{font-weight:600;font-size:19px;display:flex;justify-content:space-between}.n-n span{font-weight:400;color:var(--mut);font-size:16px}
+.n-t{font-size:18px;color:#d9d3ee;margin-top:4px;line-height:1.3}
+/* receipt */
+.receipt{width:460px;background:#f6f3ec;color:#1a1626;border-radius:6px;padding:32px 34px 26px;transform:rotate(-2.5deg);
+  box-shadow:0 40px 90px -30px rgba(0,0,0,.9);font-family:"SG";
+  -webkit-mask:radial-gradient(circle 9px at 50% 100%,#0000 98%,#000) 0 0/26px 100% repeat-x}
+.r-h{font-size:26px;font-weight:700;letter-spacing:-.02em;display:flex;justify-content:space-between;align-items:baseline;border-bottom:2px dashed #cfc7b6;padding-bottom:16px}
+.r-h span{font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:#7a7266;font-weight:500}
+.r-r{display:flex;justify-content:space-between;padding:12px 0;font-size:18px;border-bottom:1px dotted #d8d0bf}.r-r b{color:#c2410c}
+.r-t{display:flex;justify-content:space-between;padding-top:16px;font-size:30px;font-weight:700}.r-t b{color:#c2410c}
+.r-f{margin-top:14px;font-size:13px;color:#7a7266;letter-spacing:.06em;text-transform:uppercase;padding-bottom:12px}
+/* browser */
+.browser{width:540px;padding:12px;transform:perspective(1400px) rotateY(-8deg)}
+.browser img{display:block;width:100%;border-radius:12px;margin-top:10px}
+/* chart */
+.chart{width:520px;padding:26px 30px}
+.c-h{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px}.c-h span{font-size:18px;color:var(--mut)}
+.c-h b{font-size:44px;font-weight:600;letter-spacing:-.03em;color:#6ee7b7}.c-h b.zero{color:#fdba74;font-size:64px}
+.c-x{display:flex;justify-content:space-between;font-size:15px;color:var(--mut);margin-top:8px;letter-spacing:.06em;text-transform:uppercase}
+.mot{width:936px}.mot-r{display:flex;align-items:baseline;gap:28px;padding:26px 0;border-top:1px solid rgba(255,255,255,.1);font-size:40px;font-weight:500;letter-spacing:-.02em}
+.mot-r b{font-family:"IS";font-style:italic;font-weight:400;font-size:46px;color:var(--cy)}
+/* kit */
+.kit{width:500px;padding:28px 30px}
+.k-h{font-size:24px;font-weight:600;margin-bottom:12px}
+.k-r{display:flex;justify-content:space-between;align-items:center;padding:15px 0;border-top:1px solid rgba(255,255,255,.08);font-size:21px;color:#d9d3ee}
+.k-r b{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:rgba(251,146,60,.14)}
+.k-f{margin-top:16px;display:flex;align-items:center;gap:10px;padding:14px 18px;border-radius:14px;background:rgba(52,211,153,.14);color:#6ee7b7;font-weight:600;font-size:19px}
 </style></head><body>
 <div class="bg"></div><div class="grid"></div><div class="grain"></div>
 <div class="wrap">
   <div class="top"><div class="brand">${logo}<span>jorgecalleja.dev</span></div><div class="tag">Diseño web · Málaga</div></div>
   ${layout === "wide"
     ? `<div style="display:flex;gap:56px;align-items:center;flex:1;margin-top:10px">
-         <div style="flex:1.05"><div class="eyebrow">${eyebrow}</div><h1 style="font-size:78px">${title}</h1></div>
-         <div style="flex:1">${visual}</div></div>`
+         <div style="flex:1.05"><div class="eyebrow">${eyebrow}</div><h1 style="font-size:${size === 96 ? 72 : size}px">${title}</h1></div>
+         <div style="flex:1;display:flex;justify-content:center"><div style="zoom:${z ?? 1}">${visual}</div></div></div>`
     : `<div style="margin-top:${mt}px"><div class="eyebrow">${eyebrow}</div><h1 style="font-size:${size}px">${title}</h1></div>
-       <div style="flex:1;display:flex;align-items:center;justify-content:center">${visual}</div>`}
+       <div style="flex:1;display:flex;align-items:center;justify-content:center"><div style="zoom:${z ?? 1}">${visual}</div></div>`}
   <div class="foot"><div class="cta">${cta}</div><div class="site">${note}</div></div>
 </div></body></html>`;
 
 // ───────── piezas ─────────
 
+const GB = { w: 1200, h: 900, layout: "wide", size: 66, cta: "Auditoría gratis en 24 h <b>→</b>", note: "jorgecalleja.dev" };
+const IG = { w: 1080, h: 1350, size: 92, mt: 64, z: 1.6 };
+const gb = (name, o) => ({ ...GB, out: `18-google-business/v2/${name}.jpg`, ...o });
+const ig = (dir, name, o) => ({ ...IG, out: `${dir}/v2/${name}.jpg`, ...o });
+
 const pieces = {
-  "gb-2-oferta-auditoria": {
-    out: "18-google-business/v2/gb-2-oferta-auditoria.jpg", w: 1200, h: 900, size: 70, mt: 36,
-    eyebrow: "Visibilidad local",
-    title: "Si tu negocio no se ve,<br><em>no existe.</em>",
-    visual: scene({ w: 760, h: 424 }),
-    note: "jorgecalleja.dev",
-    cta: "Auditoría gratis en 24 h <b>→</b>",
-  },
-  "ig-visibilidad": {
-    out: "01-posts-cuadrados/v2/anuncio-8-visibilidad.jpg", w: 1080, h: 1350, size: 100, mt: 64,
-    eyebrow: "Visibilidad local",
-    title: "Si tu negocio no se ve,<br><em>no existe.</em>",
-    visual: scene({ w: 1000, h: 558 }),
-    cta: "Hazte visible <b>→</b>",
-  },
-  "ig-lighthouse": {
-    out: "01-posts-cuadrados/v2/anuncio-7-lighthouse-100.jpg", w: 1080, h: 1350,
-    eyebrow: "Velocidad · Google Lighthouse",
-    title: "Las plantillas se quedan en 60.<br><em>A medida, en 99.</em>",
-    visual: `<div class="rings">${ring(58, "Plantilla", "bad")}<div class="vs">vs</div>${ring(99, "A medida", "good")}</div>`,
-    cta: "Mide tu web gratis <b>→</b>",
-  },
-  "gb-search": {
-    out: "18-google-business/v2/gb-9-google.jpg", w: 1200, h: 900, layout: "wide",
-    eyebrow: "SEO local",
-    title: "El primero que aparece <em>se lleva la llamada.</em>",
-    visual: search("diseño web málaga", "Tu negocio"),
-    cta: "Auditoría gratis en 24 h <b>→</b>",
-    note: "jorgecalleja.dev",
-  },
+  // ── Google Business (1200×900) ──
+  "gb-2": gb("gb-2-oferta-auditoria", { layout: "stack", size: 70, mt: 36, eyebrow: "Visibilidad local",
+    title: "Si tu negocio no se ve,<br><em>no existe.</em>", visual: scene({ w: 760, h: 424 }) }),
+  "gb-3": gb("gb-3-kit-digital", { eyebrow: "Kit Digital", title: "Tu web del Kit Digital <em>se puede rescatar.</em>", visual: kit() }),
+  "gb-4": gb("gb-4-antes-despues", { eyebrow: "Antes y después", title: "Tener web no es <em>tener una web que vende.</em>", visual: beforeAfter() }),
+  "gb-5": gb("gb-5-movil", { eyebrow: "Móvil", title: "7 de cada 10 clientes <em>te miran desde el móvil.</em>", visual: phones(), z: 0.82 }),
+  "gb-6": gb("gb-6-proyecto-malaga", { eyebrow: "Proyecto real · Málaga", title: "Webs pensadas <em>para conseguir reservas.</em>", visual: shot("malaga-premium-transfers.webp", "malagapremiumtransfers.com"), z: 0.92 }),
+  "gb-7": gb("gb-7-velocidad", { eyebrow: "Velocidad · Lighthouse", title: "Las plantillas se quedan en 60. <em>A medida, en 99.</em>", visual: `<div class="rings">${ring(58, "Plantilla", "bad")}<div class="vs">vs</div>${ring(99, "A medida", "good")}</div>`, z: 0.85 }),
+  "gb-8": gb("gb-8-clientes", { eyebrow: "Resultados", title: "Más clientes, <em>menos perseguir.</em>", visual: chart() }),
+  "gb-9": gb("gb-9-google", { eyebrow: "SEO local", title: "El primero que aparece <em>se lleva la llamada.</em>", visual: search("diseño web málaga", "Tu negocio") }),
+  "gb-10": gb("gb-10-perdidas", { eyebrow: "Lo que cuesta una web mala", title: "Una web que falla <em>también pasa factura.</em>", visual: receipt() }),
+  "gb-11": gb("gb-11-invisible", { eyebrow: "SEO local", title: "Te buscan en Google… <em>y encuentran a otro.</em>", visual: searchLost("fontanero málaga") }),
+  "gb-12": gb("gb-12-mensajes", { eyebrow: "Una web que capta sola", title: "Despiertas y ya <em>tienes mensajes.</em>", visual: notifs(), z: 0.78 }),
+  "gb-13": gb("gb-13-proyecto-abogada", { eyebrow: "Proyecto real · Abogados", title: "Una web seria <em>genera confianza.</em>", visual: shot("ana.webp", "anarodriguezabogados.vercel.app"), z: 0.92 }),
+  "gb-14": gb("gb-14-lenta", { eyebrow: "Velocidad", title: "Más de 3 segundos <em>y ya se han ido.</em>", visual: loader() }),
+
+  // ── Instagram feed (1080×1350) ──
+  "ig-foto-1": ig("01-posts-cuadrados", "foto-1-abandonada", { eyebrow: "Kit Digital", title: "Te entregaron la web <em>y ahí se quedó.</em>", visual: flat(), cta: "Te digo qué le pasa <b>→</b>" }),
+  "ig-foto-2": ig("01-posts-cuadrados", "foto-2-invisible", { eyebrow: "SEO local", title: "Tu cliente te busca <em>y encuentra a otro.</em>", visual: searchLost("peluquería málaga"), z: 1.35, cta: "Quiero aparecer <b>→</b>" }),
+  "ig-foto-3": ig("01-posts-cuadrados", "foto-3-movil", { eyebrow: "Móvil", title: "Desde el móvil, <em>nada funciona.</em>", visual: phone("bad"), z: 1.25, cta: "Revisa la tuya gratis <b>→</b>" }),
+  "ig-foto-4": ig("01-posts-cuadrados", "foto-4-lenta", { eyebrow: "Velocidad", title: "Tarda tanto <em>que ya se han ido.</em>", visual: loader(), cta: "Mide tu web gratis <b>→</b>" }),
+  "ig-sol-1": ig("01-posts-cuadrados", "sol-1-funciona", { eyebrow: "Así se ve", title: "Una web que sí <em>trabaja para ti.</em>", visual: phone("good"), z: 1.25, cta: "La quiero así <b>→</b>" }),
+  "ig-sol-2": ig("01-posts-cuadrados", "sol-2-mensajes", { eyebrow: "Una web que capta sola", title: "Despiertas y ya <em>tienes mensajes.</em>", visual: notifs(), z: 1.3, cta: "Quiero eso <b>→</b>" }),
+  "ig-sol-3": ig("01-posts-cuadrados", "sol-3-google", { eyebrow: "SEO local", title: "El primero que ve <em>tu cliente: tú.</em>", visual: search("diseño web málaga", "Tu negocio"), cta: "Quiero salir arriba <b>→</b>" }),
+  "ig-sol-4": ig("01-posts-cuadrados", "sol-4-clientes", { eyebrow: "Resultados", title: "Más clientes <em>en tu puerta.</em>", visual: chart(), cta: "Hablamos <b>→</b>" }),
+  "ig-anuncio-5": ig("01-posts-cuadrados", "anuncio-5-ticket-perdidas", { eyebrow: "Lo que cuesta una web mala", title: "Una web que falla <em>también pasa factura.</em>", visual: receipt(), z: 1.5, cta: "Calcula la tuya gratis <b>→</b>" }),
+  "ig-anuncio-6": ig("01-posts-cuadrados", "anuncio-6-antes-despues", { eyebrow: "Antes y después", title: "Tener web vs. <em>una web que vende.</em>", visual: beforeAfter(), cta: "Te enseño la tuya <b>→</b>" }),
+  "ig-anuncio-7": ig("01-posts-cuadrados", "anuncio-7-lighthouse-100", { eyebrow: "Velocidad · Google Lighthouse", title: "Las plantillas se quedan en 60.<br><em>A medida, en 99.</em>", visual: `<div class="rings">${ring(58, "Plantilla", "bad")}<div class="vs">vs</div>${ring(99, "A medida", "good")}</div>`, z: 1.4, cta: "Mide tu web gratis <b>→</b>" }),
+  "ig-anuncio-8": ig("01-posts-cuadrados", "anuncio-8-visibilidad", { eyebrow: "Visibilidad local", title: "Si tu negocio no se ve,<br><em>no existe.</em>", visual: scene({ w: 1000, h: 558 }), z: 1, size: 90, cta: "Hazte visible <b>→</b>" }),
+
+  // ── Carrusel (1080×1350) ──
+  "car-0": ig("04-carrusel", "slide-0", { eyebrow: "Guía rápida", size: 124, mt: 150, title: "3 motivos por los que tu web <em>no te trae clientes.</em>", visual: motivos(), z: 1, cta: "Desliza <b>→</b>", note: "1 / 5" }),
+  "car-1": ig("04-carrusel", "slide-1", { eyebrow: "Motivo 1", title: "No funciona <em>en el móvil.</em>", visual: phone("bad"), z: 1.25, cta: "Desliza <b>→</b>", note: "2 / 5" }),
+  "car-2": ig("04-carrusel", "slide-2", { eyebrow: "Motivo 2", title: "Tarda tanto <em>que se van.</em>", visual: loader(), cta: "Desliza <b>→</b>", note: "3 / 5" }),
+  "car-3": ig("04-carrusel", "slide-3", { eyebrow: "Motivo 3", title: "En Google <em>no aparece.</em>", visual: searchLost("tu servicio + málaga"), z: 1.35, cta: "Desliza <b>→</b>", note: "4 / 5" }),
+  "car-4": ig("04-carrusel", "slide-4", { eyebrow: "La buena noticia", title: "Los tres <em>tienen arreglo.</em>", visual: scene({ w: 1000, h: 558 }), z: 1, cta: "Escríbeme por WhatsApp <b>→</b>", note: "Auditoría gratis en 24 h" }),
 };
 
 const ids = process.argv.slice(2).length ? process.argv.slice(2) : Object.keys(pieces);
