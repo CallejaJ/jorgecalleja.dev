@@ -304,6 +304,47 @@ ${[0,1,2,3,4,5].map(i=>`<path d="M${1002+i*14} 448 L${1009+i*14} 448 L${1008+i*1
 </svg>`;
 };
 
+// Avatar de marca: el faro del banner, centrado y con los dos haces (pensado para recorte circular)
+const avatar = (s = 720) => {
+  seed = 11;
+  const st = Array.from({ length: 46 }, () => {
+    const x = rnd() * 720, y = rnd() * 520, r = 0.8 + rnd() * 2.2, o = 0.25 + rnd() * 0.6;
+    return `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${r.toFixed(1)}" fill="${rnd() > 0.7 ? "#22d3ee" : "#ffffff"}" opacity="${o.toFixed(2)}"/>`;
+  }).join("");
+  return `<svg viewBox="0 0 720 720" width="${s}" height="${s}" xmlns="http://www.w3.org/2000/svg" style="display:block">
+<defs>
+  <radialGradient id="av-bg" cx=".5" cy=".38" r=".75"><stop offset="0" stop-color="#2a1a5e"/><stop offset=".55" stop-color="#140d2e"/><stop offset="1" stop-color="#08060f"/></radialGradient>
+  <radialGradient id="av-halo" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#5eead4" stop-opacity=".75"/><stop offset=".35" stop-color="#22d3ee" stop-opacity=".25"/><stop offset="1" stop-color="#22d3ee" stop-opacity="0"/></radialGradient>
+  <linearGradient id="av-bl" x1="1" y1="0" x2="0" y2="0"><stop offset="0" stop-color="#5eead4" stop-opacity=".9"/><stop offset="1" stop-color="#22d3ee" stop-opacity="0"/></linearGradient>
+  <linearGradient id="av-br" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#5eead4" stop-opacity=".9"/><stop offset="1" stop-color="#22d3ee" stop-opacity="0"/></linearGradient>
+  <linearGradient id="av-tower" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4f7cf7"/><stop offset="1" stop-color="#8b3ff0"/></linearGradient>
+  <linearGradient id="av-roof" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5b7cf6"/><stop offset="1" stop-color="#8b3ff0"/></linearGradient>
+  <filter id="av-blur" x="-20%" y="-60%" width="140%" height="220%"><feGaussianBlur stdDeviation="7"/></filter>
+</defs>
+<rect width="720" height="720" fill="url(#av-bg)"/>
+${st}
+<g transform="translate(155 78) scale(.9)">
+  <polygon points="228,150 -140,70 -140,250" fill="url(#av-bl)" filter="url(#av-blur)" opacity=".7"/>
+  <polygon points="228,152 -140,96 -140,224" fill="url(#av-bl)" opacity=".6"/>
+  <polygon points="228,150 596,70 596,250" fill="url(#av-br)" filter="url(#av-blur)" opacity=".7"/>
+  <polygon points="228,152 596,96 596,224" fill="url(#av-br)" opacity=".6"/>
+  <circle cx="228" cy="159" r="120" fill="url(#av-halo)"/>
+  <path d="M150 120 L228 46 L306 120 Z" fill="url(#av-roof)"/>
+  <rect x="172" y="120" width="112" height="78" rx="14" fill="#1a1440"/>
+  <circle cx="228" cy="159" r="27" fill="#5eead4"/><circle cx="228" cy="159" r="42" fill="#5eead4" opacity=".28"/>
+  <rect x="150" y="196" width="156" height="20" rx="10" fill="#3b2f86"/>
+  <path d="M172 216 L284 216 L318 532 L138 532 Z" fill="url(#av-tower)"/>
+  <path d="M168 262 L288 262 L293 306 L163 306 Z" fill="#c9c6f7" opacity=".75"/>
+  <path d="M158 360 L298 360 L303 404 L153 404 Z" fill="#c9c6f7" opacity=".6"/>
+  <path d="M150 450 L306 450 L310 482 L146 482 Z" fill="#c9c6f7" opacity=".35"/>
+  <rect x="210" y="444" width="36" height="58" rx="18" fill="#3b2f86"/>
+  <rect x="114" y="526" width="228" height="32" rx="16" fill="#2a2266"/>
+  <path d="M40 596 Q90 566 140 596" stroke="#2fb5c9" stroke-width="12" fill="none" stroke-linecap="round"/>
+  <path d="M316 596 Q366 566 416 596" stroke="#2fb5c9" stroke-width="12" fill="none" stroke-linecap="round"/>
+</g>
+</svg>`;
+};
+
 // ───────── plantilla ─────────
 
 const page = ({ w, h, eyebrow, title, visual = "", cta, layout, size = 96, mt = 70, note = "Escríbeme por WhatsApp", z, sub, photo, pad, tag = "Diseño web · Málaga" }) => `<!doctype html><html><head><meta charset="utf-8"><style>
@@ -669,7 +710,7 @@ add({
 // ── 06 · Facebook ──
 const FBC = { w: 1640, h: 624, layout: "wide", pad: "44px 96px", size: 62, note: "jorgecalleja.dev", cta: WA };
 add({
-  "fb-perfil": { w: 720, h: 720, layout: "cover", visual: bigLogo(470), out: "06-facebook/facebook-perfil-faro.jpg" },
+  "fb-perfil": { w: 720, h: 720, layout: "cover", visual: avatar(720), out: "06-facebook/facebook-perfil-faro.jpg" },
   "fb-portada-faro": { ...FBC, eyebrow: "El Faro de tu Web", title: "Webs que sí <em>traen clientes.</em>", sub: "Rescato webs del Kit Digital · SEO · 99/100", visual: scene({ w: 620, h: 346 }), out: "06-facebook/facebook-portada-faro.jpg" },
   "fb-portada": { ...FBC, eyebrow: "Kit Digital", title: "¿Tu web del Kit Digital <em>no te trae clientes?</em>", sub: "Auditoría gratuita en 24 h.", visual: beforeAfter(), z: 0.78, out: "06-facebook/facebook-portada.jpg" },
 });
@@ -694,7 +735,7 @@ add({
 add({
   "marca-banner": { w: 1376, h: 768, scale: 2, layout: "cover", out: "09-marca/landcapejorgcallejadev.jpg",
     visual: `<div class="bs">${scene({ w: 1376, h: 768 })}<div class="bs-t"><div class="eyebrow">jorgecalleja.dev</div><h1>Webs que sí <em>traen clientes.</em></h1></div></div>` },
-  "marca-faro": { w: 320, h: 320, layout: "cover", visual: bigLogo(210), out: "09-marca/faro-preview.jpg" },
+  "marca-faro": { w: 320, h: 320, layout: "cover", visual: avatar(320), out: "09-marca/faro-preview.jpg" },
 });
 
 // ── 10 · Analizador y destacados ──
