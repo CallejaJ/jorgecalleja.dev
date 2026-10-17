@@ -824,6 +824,12 @@ add({
     </div>` },
 });
 
+// Marca de agua de los vídeos de YouTube: PNG transparente de 150×150
+pieces["youtube-marca-agua"] = { w: 150, h: 150, out: "06-facebook/youtube-marca-agua.png",
+  raw: `<!doctype html><html><head><style>html,body{margin:0;background:transparent}
+    div{width:150px;height:150px;display:grid;place-items:center}
+    svg{width:132px;height:132px;filter:drop-shadow(0 2px 6px rgba(0,0,0,.6))}</style></head><body><div>${logo}</div></body></html>` };
+
 // ── Raíz: Patreon y miniaturas ──
 add({
   patreon: { w: 1600, h: 900, layout: "wide", size: 84, eyebrow: "Lo que nadie te contó", title: "Kit Digital: <em>el gran engaño.</em>", visual: kit(), z: 1.15, cta: WA, note: "jorgecalleja.dev", out: "patreon-kit-digital.jpg" },
@@ -857,10 +863,11 @@ const render = async (p, out) => {
   ctxs[scale] ??= await browser.newContext({ deviceScaleFactor: scale });
   const tab = await ctxs[scale].newPage();
   await tab.setViewportSize({ width: p.w, height: p.h });
-  await tab.setContent(page(p), { waitUntil: "load" });
+  await tab.setContent(p.raw ?? page(p), { waitUntil: "load" });
   await tab.evaluate(() => document.fonts.ready);
   mkdirSync(dirname(out), { recursive: true });
-  await tab.screenshot({ path: out, type: "jpeg", quality: 92 });
+  const png = out.endsWith(".png");
+  await tab.screenshot({ path: out, ...(png ? { type: "png", omitBackground: true } : { type: "jpeg", quality: 92 }) });
   await tab.close();
 };
 for (const id of ids) {

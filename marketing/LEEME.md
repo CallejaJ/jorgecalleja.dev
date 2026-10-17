@@ -39,6 +39,7 @@ Carrusel "3 motivos" para Instagram. Sube las 5 slides en orden (slide-0 a slide
 - `facebook-portada-faro.jpg` — portada "Webs que sí traen clientes".
 - `facebook-portada.jpg` — portada alternativa del Kit Digital.
 - `youtube-banner.jpg` — fondo del canal de YouTube (2048×1152; el texto va en la zona segura central de 1235×338).
+- `youtube-marca-agua.png` — marca de agua de los vídeos de YouTube (150×150, fondo transparente).
 
 ## 07-generadores
 `gen-v2.mjs` genera todas las piezas y vídeos: `node marketing/07-generadores/gen-v2.mjs` (todo), con ids concretos (`gb-2 story-1`) o `video:motivos`. Necesita Playwright y `ffmpeg`. Las fuentes están en `fonts/`, el audio de los reels en `audio/` y las capturas originales de las webs en `capturas/`.
