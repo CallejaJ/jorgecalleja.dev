@@ -83,7 +83,47 @@ diseño web málaga, diseño web a medida, seo local, kit digital, web para aut�
 
 ---
 
-## 3. Shorts (los reels de `03-reels-video`)
+## 3. Vídeo para artistas (`youtube-artistas.mp4`)
+
+**Título:**
+```
+Tu música, en una web tuya | Webs para artistas, DJs y músicos desde 199 €
+```
+
+**Descripción:**
+```
+Spotify, Instagram, YouTube, TikTok, Bandcamp… Tu música vive repartida en mil plataformas, y todas dependen de un algoritmo que tú no controlas.
+
+Una web propia lo junta todo en un solo link que es tuyo para siempre:
+- Tu música y tus vídeos.
+- Tus próximos bolos.
+- Galería, tienda de merch sin comisiones y contacto para promotores.
+- Y que te encuentren en Google por tu nombre, no solo en redes.
+
+Webs a medida para artistas desde 199 € (precio de lanzamiento).
+
+Mira una demo: https://musicartistdj.vercel.app
+Más info: https://jorgecalleja.dev/musicos
+WhatsApp: 624 57 27 07
+
+#webparamúsicos #músicaindependiente #djs
+```
+
+**Miniatura:** `youtube-artistas-miniatura.jpg`
+
+**Etiquetas:**
+```
+web para músicos, web para artistas, web para djs, página web músico, música independiente, link en bio, web propia artista, productores musicales, jorgecalleja.dev
+```
+
+**Comentario fijado:**
+```
+¿Dónde tienes ahora mismo tu música: en cuántas plataformas distintas? Cuéntamelo y te digo cómo juntarlo todo en un link.
+```
+
+---
+
+## 4. Shorts (los reels de `03-reels-video`)
 
 Súbelos tal cual desde el móvil o desde Studio (son verticales y de menos de 60 s). Título corto con #Shorts y la misma descripción base.
 

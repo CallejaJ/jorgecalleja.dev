@@ -654,6 +654,20 @@ scenes["youtube-trailer"] = [
   yt({ eyebrow: "En este canal", title: "Webs que sí <em>traen clientes.</em>", sub: "Diseño web a medida, SEO y velocidad. Suscríbete.", visual: scene({ w: 760, h: 424 }), z: 1, cta: "Auditoría gratis en 24 h <b>→</b>" }),
 ];
 
+// Vídeo horizontal para artistas (1920×1080)
+const ytm = (o) => yt({ ...MES, cta: undefined, note: "jorgecalleja.dev", ...o });
+const ytmFoto = (photo, o) => ytm({ ...FOTO, photo, size: 104, mt: 10, ...o });
+scenes["youtube-artistas"] = [
+  ytm({ title: "Tu música vive <em>dispersa.</em>", sub: "Spotify, Instagram, YouTube, TikTok…", visual: scatter(["Spotify", "Instagram", "YouTube", "TikTok", "Bandcamp", "SoundCloud", "Linktree", "Beatport"]), z: 1.05 }),
+  ytmFoto("music-pain-2.webp", { eyebrow: "El problema", title: "Dependes <em>del algoritmo.</em>", sub: "Si cambia mañana, tu público desaparece." }),
+  ytmFoto("music-pain-3.webp", { eyebrow: "La imagen", title: "Un link de perfil <em>no es una web propia.</em>", sub: "Promotores y salas buscan algo serio." }),
+  ytm({ eyebrow: "La solución", title: "Una web. <em>Tuya.</em>", sub: "Para siempre, sin depender de nadie.", visual: shot(...DEMO), z: 1.75 }),
+  ytm({ eyebrow: "Todo en un link", title: "Tu mundo, <em>en un solo sitio.</em>", visual: grid6(["Música", "Vídeos", "Bolos", "Galería", "Tienda", "Contacto"]), z: 1.15 }),
+  ytm({ eyebrow: "En Google", title: "Que te encuentren <em>por tu nombre.</em>", sub: "No solo en redes.", visual: search("tu nombre artístico", "Tu web oficial"), z: 1.35 }),
+  ytm({ eyebrow: "Precio de lanzamiento", title: "Webs a medida <em>para artistas.</em>", sub: "Escríbeme y la vemos juntos.", visual: price("Desde", "199 €"), z: 1.4, cta: WA }),
+];
+pieces["yt-miniatura-artistas"] = { ...scenes["youtube-artistas"][3], scale: 1280 / 1920, out: "19-youtube/youtube-artistas-miniatura.jpg" };
+
 pieces["yt-miniatura"] = { ...scenes["youtube-trailer"].at(-1), scale: 1280 / 1920, out: "19-youtube/youtube-trailer-miniatura.jpg" };
 
 // Fotogramas que también se guardan como imágenes sueltas
@@ -672,6 +686,7 @@ const videos = {
   "reel-7claves-musicos-es": { scenes: scenes["reel-7claves-musicos-es"], dur: 28 },
   "reel-musicos-es": { scenes: scenes["reel-musicos-es"], dur: 12 },
   "reel-musicos-en": { scenes: scenes["reel-musicos-en"], dur: 12 },
+  "youtube-artistas": { scenes: scenes["youtube-artistas"], dur: 32, out: "19-youtube/youtube-artistas.mp4" },
   "youtube-trailer": { scenes: scenes["youtube-trailer"], dur: 30, out: "19-youtube/youtube-trailer.mp4" },
 };
 
