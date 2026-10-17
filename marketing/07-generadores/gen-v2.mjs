@@ -641,6 +641,21 @@ const scenes = {
     vf({ ...MEN, title: "Websites <em>for artists.</em>", visual: price("From", "€199"), z: 1.3 }),
   ],
 };
+// Tráiler horizontal para el canal de YouTube (1920×1080)
+const YT = { w: 1920, h: 1080, layout: "wide", size: 92, pad: "84px 120px 76px", note: "jorgecalleja.dev" };
+const yt = (o) => ({ ...YT, ...o });
+scenes["youtube-trailer"] = [
+  yt({ eyebrow: "¿Te suena?", title: "Tienes negocio. Tienes web.<br><em>¿Y los clientes?</em>", sub: "Algo no cuadra.", visual: flat(), z: 1.15 }),
+  yt({ eyebrow: "En Google", title: "Te buscan <em>y encuentran a otro.</em>", visual: searchLost("tu servicio + málaga"), z: 1.35 }),
+  yt({ eyebrow: "En el móvil", title: "Si no funciona, <em>se van.</em>", sub: "7 de cada 10 clientes entran desde el móvil.", visual: phones(), z: 1.05 }),
+  yt({ eyebrow: "Velocidad", title: "Si tarda, <em>se cansan.</em>", visual: loader(), z: 1.4 }),
+  yt({ eyebrow: "Velocidad · Google Lighthouse", title: "Las plantillas se quedan en 60.<br><em>A medida, en 99.</em>", size: 80, visual: RINGS, z: 1.1 }),
+  yt({ eyebrow: "Antes y después", title: "Casi todo <em>se rescata.</em>", sub: "Conservo tu dominio, textos y fotos.", visual: beforeAfter(), z: 1.15 }),
+  yt({ eyebrow: "En este canal", title: "Webs que sí <em>traen clientes.</em>", sub: "Diseño web a medida, SEO y velocidad. Suscríbete.", visual: scene({ w: 760, h: 424 }), z: 1, cta: "Auditoría gratis en 24 h <b>→</b>" }),
+];
+
+pieces["yt-miniatura"] = { ...scenes["youtube-trailer"].at(-1), scale: 1280 / 1920, out: "19-youtube/youtube-trailer-miniatura.jpg" };
+
 // Fotogramas que también se guardan como imágenes sueltas
 scenes["dolores-locales"].forEach((p, i) => (pieces[`frame-dolores-${i + 1}`] = { ...p, out: `${FR}/dolores-locales/0${i + 1}.jpg` }));
 scenes.lighthouse.forEach((p, i) => (pieces[`frame-lighthouse-${i + 1}`] = { ...p, out: `${FR}/lighthouse/0${i + 1}.jpg` }));
@@ -657,6 +672,7 @@ const videos = {
   "reel-7claves-musicos-es": { scenes: scenes["reel-7claves-musicos-es"], dur: 28 },
   "reel-musicos-es": { scenes: scenes["reel-musicos-es"], dur: 12 },
   "reel-musicos-en": { scenes: scenes["reel-musicos-en"], dur: 12 },
+  "youtube-trailer": { scenes: scenes["youtube-trailer"], dur: 30, out: "19-youtube/youtube-trailer.mp4" },
 };
 
 // ── 05 · Historias ──
@@ -825,11 +841,11 @@ for (const name of wantVideos) {
   }
   const audio = join(here, "audio", `${name}.m4a`);
   const hasAudio = existsSync(audio);
-  const out = join(root, "03-reels-video", `${name}.mp4`);
+  const out = join(root, v.out ?? `03-reels-video/${name}.mp4`);
   execFileSync("ffmpeg", ["-v", "error", "-y", ...inputs, ...(hasAudio ? ["-i", audio] : []),
     "-filter_complex", `${chain}[${last}]format=yuv420p[out]`, "-map", "[out]", ...(hasAudio ? ["-map", `${n}:a`, "-c:a", "aac", "-b:a", "128k"] : []),
     "-c:v", "libx264", "-preset", "medium", "-crf", "21", "-r", "30", "-t", String(v.dur), "-movflags", "+faststart", out]);
   rmSync(tmp, { recursive: true, force: true });
-  console.log("✓", `03-reels-video/${name}.mp4`, hasAudio ? "(con audio)" : "(sin audio)");
+  console.log("✓", v.out ?? `03-reels-video/${name}.mp4`, hasAudio ? "(con audio)" : "(sin audio)");
 }
 await browser.close();
