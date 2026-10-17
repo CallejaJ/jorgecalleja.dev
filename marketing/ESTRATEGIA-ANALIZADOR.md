@@ -22,7 +22,7 @@ Graba la pantalla analizando webs reales (sin decir nombres) y reacciona a las n
 - Gancho: "Voy a analizar la web de 3 negocios de Málaga… y da miedo."
 - Muestras 3 análisis con notas en rojo.
 - Cierre: "¿Quieres saber la nota de la tuya? Es gratis, link en la bio."
-- Fondo: `10-analizador/fondo-reel.png`
+- Fondo: `10-analizador/fondo-reel.jpg`
 
 ### 2. Reel/Historia: "Reto de los 30 segundos"
 - "Te reto: analiza tu web ahora mismo en mi web. Si sacas más de 90, te invito a un café."
@@ -34,7 +34,7 @@ Explica las 4 notas (velocidad, accesibilidad, prácticas, SEO) en 4 slides + 1 
 
 ### 4. Post imagen: captura de una web en rojo
 - Un análisis con notas rojas + "Esto le pone Google a muchas webs del Kit Digital. ¿Y a la tuya? Analízala gratis. Link en la bio."
-- Fondo: `10-analizador/post-analizador.png`
+- Fondo: `10-analizador/post-analizador.jpg`
 
 ### 5. Historia con encuesta
 - "¿Cuánto crees que puntúa tu web en Google?" con opciones 🔴🟠🟢.
@@ -77,7 +77,7 @@ El momento en que los medidores se animan y aparece un número rojo es oro visua
 
 El analizador es un gancho buenísimo para Meta Ads:
 - Objetivo: **tráfico a la web** (para que usen el analizador) o **mensajes**.
-- Creativo: reel del análisis o `10-analizador/post-analizador.png`.
+- Creativo: reel del análisis o `10-analizador/post-analizador.jpg`.
 - Texto: "Analiza tu web gratis en 30 segundos. Descubre qué le pone Google."
 - El que analiza y ve rojo, entra en tu web y tiene el WhatsApp a un clic.
 
