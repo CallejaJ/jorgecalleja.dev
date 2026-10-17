@@ -806,6 +806,24 @@ add({
   "pr-auditoria": st("16-historias-promos", "promo-auditoria", { eyebrow: "Gratis", title: "¿Tu web no vende? <em>Auditoría gratis en 24 h.</em>", size: 96, sub: "Te digo qué falla y cómo arreglarlo. Sin compromiso.", visual: price("Auditoría", "Gratis"), z: 1.6, cta: WA }),
 });
 
+// ── YouTube: banner del canal (2048×1152, zona segura central 1235×338) ──
+add({
+  youtube: { w: 2048, h: 1152, layout: "cover", out: "06-facebook/youtube-banner.jpg",
+    visual: `${(() => { seed = 23; return `<svg style="position:fixed;inset:0" width="2048" height="1152">${Array.from({ length: 160 }, () => {
+        const x = rnd() * 2048, y = rnd() * 1152, r = 0.8 + rnd() * 2.2, o = 0.2 + rnd() * 0.55;
+        return `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${r.toFixed(1)}" fill="${rnd() > 0.7 ? "#22d3ee" : "#ffffff"}" opacity="${o.toFixed(2)}"/>`;
+      }).join("")}</svg>`; })()}
+      <div style="position:fixed;left:0;right:0;top:470px;height:212px;background:radial-gradient(50% 50% at 50% 50%,rgba(139,92,246,.28),transparent 75%)"></div>
+      <div style="position:relative;width:1235px;height:338px;display:flex;align-items:center;gap:40px">
+      <div style="flex:1">
+        <div class="brand" style="font-size:30px">${logo}<span>jorgecalleja.dev</span></div>
+        <h1 style="font-size:76px;margin-top:22px">Webs que sí <em>traen clientes.</em></h1>
+        <p class="sub" style="font-size:26px;margin-top:16px">Diseño web a medida · Málaga</p>
+      </div>
+      ${scene({ w: 560, h: 313 })}
+    </div>` },
+});
+
 // ── Raíz: Patreon y miniaturas ──
 add({
   patreon: { w: 1600, h: 900, layout: "wide", size: 84, eyebrow: "Lo que nadie te contó", title: "Kit Digital: <em>el gran engaño.</em>", visual: kit(), z: 1.15, cta: WA, note: "jorgecalleja.dev", out: "patreon-kit-digital.jpg" },
