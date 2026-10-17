@@ -46,7 +46,7 @@ Ambas se actualizaron en Metricool (media re-descargada con `?v=2`). Commit `a14
 
 ## 5 · Destacados (Highlights)
 
-Portadas ya creadas en `10-destacados/`. Para el nicho música: **`destacado-artistas.png`** (nota musical). Guardar ahí las historias de música (demo, encuesta, antes/después, precio, proceso, testimonio).
+Portadas ya creadas en `10-destacados/`. Para el nicho música: **`destacado-artistas.jpg`** (nota musical). Guardar ahí las historias de música (demo, encuesta, antes/después, precio, proceso, testimonio).
 
 ## Pendientes de Jorge
 

@@ -35,9 +35,9 @@ Total: ~5 publicaciones de feed + historias sueltas por semana. Sostenible para 
 | Día | Formato | Contenido | Carpeta |
 |---|---|---|---|
 | **Lunes** | Reel | dolor→solución | `03-reels-video/dolor-solucion.mp4` |
-| **Martes** | Post | foto dolor (Kit Digital) | `01-posts-cuadrados/foto-1-abandonada.png` |
+| **Martes** | Post | foto dolor (Kit Digital) | `01-posts-cuadrados/foto-1-abandonada.jpg` |
 | **Miércoles** | Reel | 3 motivos | `03-reels-video/motivos.mp4` |
-| **Jueves** | Post | solución / faro | `01-posts-cuadrados/sol-3-google.png` o `anuncio-8-visibilidad.png` |
+| **Jueves** | Post | solución / faro | `01-posts-cuadrados/sol-3-google.jpg` o `anuncio-8-visibilidad.jpg` |
 | **Viernes** | Reel | lighthouse / dolores locales | `03-reels-video/lighthouse.mp4` |
 | **Fin de semana** | Historias | recordar oferta + analizador | `05-historias/` |
 
